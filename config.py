@@ -1,5 +1,5 @@
 import os
-import keygen
+from utils.keygen import KeyGen
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -8,7 +8,7 @@ class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = keygen.get_random_key()
+    SECRET_KEY = KeyGen().get_random_key()
 
 
 class ProductionConfig(Config):
