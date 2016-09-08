@@ -1,0 +1,31 @@
+{
+  "name": "kylejnovak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/bundle.js",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "devDependencies": {
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.3",
+    "webpack": "^1.13.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylenovak/kylejnovak.git"
+  },
+  "author": "Kyle J. Novak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylenovak/kylejnovak/issues"
+  },
+  "homepage": "https://github.com/kylenovak/kylejnovak#readme"
+}
