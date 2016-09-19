@@ -8,10 +8,5 @@
     "jsx": "react",
     "removeComments": true,
     "preserveConstEnums": true
-  },
-  "files": [
-    "./typings/index.d.ts",
-    "./src/components/hello.tsx",
-    "./src/index.tsx"
-  ]
+  }
 }

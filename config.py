@@ -1,5 +1,5 @@
 import os
-from utils.keygen import KeyGen
+from app.utils.keygen import KeyGen
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
