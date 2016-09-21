@@ -4,14 +4,14 @@
         {% block head %}
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='bundle.css') }}">
-        <title>{% block title %}{% endblock %} - Kyle J. Novak</title>
+        <title>{% block title %}{% endblock %} | Kyle J. Novak</title>
         {% endblock %}
     </head>
 
     <body>
-        <div class="content">
+        <main class="content">
             {% block content %}{% endblock %}
-        </div>
+        </main>
 
         <footer>
             {% block footer %}
