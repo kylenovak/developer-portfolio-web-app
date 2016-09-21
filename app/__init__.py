@@ -6,10 +6,16 @@ import os
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['AUTHOR'] = 'Kyle J. Novak'
+app.config['YEAR_APP_BUILT'] = 2016
+
 db = SQLAlchemy(app)
 
 # import models
 import app.models as models
+
+# data to set before each request
+from app.before_requests import *
 
 # import error handlers
 from app.error_handlers import *
