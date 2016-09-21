@@ -5,9 +5,6 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['AUTHOR'] = 'Kyle J. Novak'
-app.config['YEAR_APP_BUILT'] = 2016
 
 db = SQLAlchemy(app)
 
