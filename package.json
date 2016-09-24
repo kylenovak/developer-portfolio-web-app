@@ -2,7 +2,7 @@
   "name": "kylejnovak",
   "version": "1.0.0",
   "description": "",
-  "main": "./static/main.min.js",
+  "main": "./app/src/main.tsx",
   "dependencies": {
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
@@ -18,12 +18,11 @@
     "typescript": "^1.8.10",
     "typings": "^1.3.3",
     "webpack": "^1.13.2",
-    "webpack-dev-middleware": "^1.8.1",
-    "webpack-dev-server": "^1.16.1",
-    "webpack-hot-middleware": "^2.12.2"
+    "webpack-livereload-plugin": "^0.8.2"
   },
   "scripts": {
     "build": "webpack",
+    "watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

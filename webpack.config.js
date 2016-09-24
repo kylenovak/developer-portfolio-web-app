@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const config = {
-    entry: './src/index.tsx',
+    entry: './app/src/main.tsx',
     devtool: 'source-map',
     module: {
         loaders: [
@@ -13,19 +14,19 @@ const config = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract(
-                    'style', // the backup style loader
-                    'css?sourceMap!sass?sourceMap'
+                    'style-loader', 'css-loader', 'sass-loader'
                 )
             }
         ]
     },
     output: {
-        path: './static',
-        filename: '/bundle.js',
+        path: './app/static',
+        filename: 'bundle.js'
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin(),
-        new ExtractTextPlugin('./bundle.css')
+        new ExtractTextPlugin('bundle.css'),
+        new LiveReloadPlugin()
     ],
     resolve: {
         extensions: ['', '.ts', '.tsx', '.js']
