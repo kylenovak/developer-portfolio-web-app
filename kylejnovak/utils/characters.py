@@ -1,5 +1,3 @@
-
-
 class Characters(object):
     """Characters that make up a random key."""
     SYMBOLS = '!@#$%^&*()_+;,.[]-='

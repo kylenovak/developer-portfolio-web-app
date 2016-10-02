@@ -2,7 +2,7 @@
   "name": "kylejnovak",
   "version": "1.0.0",
   "description": "",
-  "main": "./app/static/src/main.tsx",
+  "main": "./kylejnovak/static/src/main.tsx",
   "dependencies": {
     "react": "^15.3.1",
     "react-dom": "^15.3.1"

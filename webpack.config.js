@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const config = {
-    entry: './app/static/src/main.tsx',
+    entry: './kylejnovak/static/src/main.tsx',
     devtool: 'source-map',
     module: {
         loaders: [
@@ -20,7 +20,7 @@ const config = {
         ]
     },
     output: {
-        path: './app/static/dist',
+        path: './kylejnovak/static/dist',
         filename: 'bundle.js'
     },
     plugins: [

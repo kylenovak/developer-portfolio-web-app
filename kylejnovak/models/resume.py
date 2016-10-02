@@ -1,20 +1,22 @@
-from app import db
+from kylejnovak import db
 from datetime import datetime
 
 
-class Project(db.Model):
-    __tablename__ = 'projects'
+class Resume(db.Model):
+    __tablename__ = 'resume'
+
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(255))
     content = db.Column(db.Text)
     create_date = db.Column(db.DateTime, default=datetime.utcnow())
     update_date = db.Column(db.DateTime, default=datetime.utcnow())
 
-    def __init__(self, title='', content='', create_date='', update_date=''):
-        self.title = title
+    def __init__(self, content='', create_date='', update_date=''):
         self.content = content
         self.create_date = create_date
         self.update_date = update_date
 
     def __repr__(self):
-        return '<id {}>'.format(self.id)
+        return '<Resume id {:d}>'.format(self.id)
+
+    def __str__(self):
+        return self.content
