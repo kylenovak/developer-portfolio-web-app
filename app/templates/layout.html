@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% block head %}
-            <meta charset="UTF-8">
-            <title>{% block title %}{% endblock %} | Kyle J. Novak</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
-            <link rel="stylesheet" href="{{ url_for('static', filename='bundle.css') }}">
-        {% endblock %}
-    </head>
-    <body>
-        {% block dependencies %}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
-        {% endblock %}
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %} | Kyle J. Novak</title>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='dist/bundle.css') }}">
+    {% endblock %}
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
 
-        <main class="content">
+    <div class="page-wrapper">
+        {% include "header.html" %}
+
+        <main class="page-content">
             {% block content %}{% endblock %}
         </main>
 
-        <footer>
-            {% block footer %}
-                {{ g.get('copyright_text') }}
-            {% endblock %}
-        </footer>
+        {% include "footer.html" %}
+    </div>
 
-        {% block scripts %}
-            <script src="{{ url_for('static', filename='bundle.js') }}"></script>
-            {# Remove this script in production #}
-            {#<script src="http://localhost:35729/livereload.js"></script>#}
-        {% endblock %}
-
-    </body>
+    <script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
+    {# Remove this script in production #}
+    <script src="http://localhost:35729/livereload.js"></script>
+</body>
 </html>

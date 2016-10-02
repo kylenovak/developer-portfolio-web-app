@@ -1,1 +1,1 @@
-from app.models.result import Result
+from app.models.project import Project

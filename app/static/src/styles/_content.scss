@@ -1,0 +1,10 @@
+// content.scss
+
+@import 'globals';
+
+
+main.page-content {
+  max-width: $page-max-width;
+  margin: auto;
+  padding: 0;
+}

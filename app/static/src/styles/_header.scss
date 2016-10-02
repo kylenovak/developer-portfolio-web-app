@@ -1,0 +1,68 @@
+// header.scss
+@import 'mixins';
+@import 'transitions';
+@import 'colors';
+@import 'globals';
+
+
+header.page-header {
+  $link-text-font-size: 1.5em;
+
+  nav.navbar-light {
+    background-color: #ffffff;
+
+    @include border-radius(0);
+
+    div.container {
+      max-width: $page-max-width;
+      text-align: center;
+
+      a.navbar-brand {
+        color: #333333;
+        font-size: $link-text-font-size + 2;
+        font-weight: bolder;
+        float: none;
+
+        @include transition(color $transition-speed);
+
+        &.active {
+          color: $primary-color;
+        }
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      ul.nav.navbar-nav {
+        display: inline-block;
+        margin-top: 5px;
+
+        li.nav-item {
+          a.nav-link {
+            color: #555555;
+            font-size: $link-text-font-size;
+            font-weight: lighter;
+            padding: 5px 10px;
+            border: 2px solid #ffffff;
+
+            @include border-radius(3px);
+            @include transition(color $transition-speed, border-color $transition-speed);
+
+            &:hover {
+              color: $primary-color;
+              border-color: $primary-color;
+            }
+          }
+
+          &.active {
+            a.nav-link {
+              color: $primary-color;
+              border-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

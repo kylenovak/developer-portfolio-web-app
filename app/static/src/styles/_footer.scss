@@ -1,0 +1,22 @@
+// footer.scss
+@import 'mixins';
+@import 'colors';
+@import 'globals';
+
+
+footer.page-footer {
+  $footer-height: 40px;
+
+  background-color: $secondary-color;
+  height: $footer-height;
+
+  @include box-shadow(0 0 3px 1px rgba(0,0,0,0.25));
+
+  div.container {
+    max-width: $page-max-width;
+    height: inherit;
+    display: flex;
+    align-items: center; // vertical center alignment
+    justify-content: center; // horizontal center alignment
+  }
+}

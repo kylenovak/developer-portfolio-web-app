@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const config = {
-    entry: './app/src/main.tsx',
+    entry: './app/static/src/main.tsx',
     devtool: 'source-map',
     module: {
         loaders: [
@@ -14,13 +14,13 @@ const config = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract(
-                    'style-loader', 'css-loader', 'sass-loader'
+                    'style', 'css!sass'
                 )
             }
         ]
     },
     output: {
-        path: './app/static',
+        path: './app/static/dist',
         filename: 'bundle.js'
     },
     plugins: [

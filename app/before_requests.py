@@ -1,24 +1,9 @@
 from flask import g, Markup
 from app import app
-from datetime import date
-
-
-def get_copyright_text():
-    # app built on this year
-    YEAR_APP_BUILT = app.config['YEAR_APP_BUILT']
-    CURRENT_YEAR = date.today().year
-
-    copyright_text = 'Copyright &copy; {:d}'.format(YEAR_APP_BUILT)
-
-    if CURRENT_YEAR > YEAR_APP_BUILT:
-        copyright_text += '- {:d}'.format(CURRENT_YEAR)
-    else:
-        copyright_text += ', {}'.format(app.config['AUTHOR'])
-
-    return copyright_text
+from app.services.footer import copyright
 
 
 @app.before_request
 def before_requests():
     # mark this text as safe
-    g.copyright_text = Markup(get_copyright_text())
+    g.copyright_text = Markup(copyright.get_copyright_text(app))
