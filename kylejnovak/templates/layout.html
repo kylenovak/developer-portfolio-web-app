@@ -18,6 +18,10 @@
         {% include "header.html" %}
 
         <main class="page-content">
+            {% if current_user.is_authenticated %}
+                Hi {{ current_user.username }}!
+            {% endif %}
+
             {% block content %}{% endblock %}
         </main>
 

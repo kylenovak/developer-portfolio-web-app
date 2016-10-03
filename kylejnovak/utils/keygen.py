@@ -12,13 +12,17 @@ class KeyGen(Characters):
         """Checks the strength of the key.
         Additional characters are added to the key if the key is weak."""
         if not self.contains_lowercase(key):
-            key += random.choice(self.LOWERCASE_LETTERS)
+            index = random.randint(0, len(key))
+            key = key[:index] + random.choice(self.LOWERCASE_LETTERS) + key[index:]
         if not self.contains_uppercase(key):
-            key += random.choice(self.UPPERCASE_LETTERS)
+            index = random.randint(0, len(key))
+            key = key[:index] + random.choice(self.UPPERCASE_LETTERS) + key[index:]
         if not self.contains_numbers(key):
-            key += random.choice(self.NUMBERS)
+            index = random.randint(0, len(key))
+            key = key[:index] + random.choice(self.NUMBERS) + key[index:]
         if not self.contains_symbols(key):
-            key += random.choice(self.SYMBOLS)
+            index = random.randint(0, len(key))
+            key = key[:index] + random.choice(self.SYMBOLS) + key[index:]
         return key
 
 

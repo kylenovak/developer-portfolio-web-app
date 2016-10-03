@@ -1,4 +1,5 @@
 from flask import g, Markup
+
 from kylejnovak import app
 from kylejnovak.services.footer import copyright
 
