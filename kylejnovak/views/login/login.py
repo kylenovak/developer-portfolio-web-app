@@ -14,7 +14,7 @@ def login():
         # Tell Flask-Login that user has been authenticated.
         login_user(login_form.user)
         flash('User logged in successfully.')
-        return redirect('/admin')
+        return redirect(url_for('admin.index'))
     return render_template('login.html', login_form=login_form)
 
 

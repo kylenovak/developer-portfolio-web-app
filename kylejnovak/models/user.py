@@ -9,9 +9,10 @@ class User(UserMixin, db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(30), unique=True)
-    email = db.Column(db.String(120), unique=True)
-    _hashed_password = db.Column(db.String)
+    username = db.Column(db.String(30), nullable=False, unique=True)
+    email = db.Column(db.String(120), nullable=False, unique=True)
+    user_role = db.Column(db.CHAR(1), default='R', nullable=False)
+    _hashed_password = db.Column(db.String(60), nullable=False)
 
     @hybrid_property
     def password(self):

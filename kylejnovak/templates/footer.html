@@ -1,5 +1,12 @@
 <footer class="page-footer">
     <div class="container">
-        <span>{{ g.get('copyright_text') }} | <a href="{{ url_for('login_page.login') }}">Admin login</a></span>
+        <span>{{ g.get('copyright_text') }} |
+             {% if current_user.is_authenticated and current_user.user_role == 'A'  %}
+                <a href="{{ url_for('admin.index') }}">Admin</a> |
+                 <a href="{{ url_for('login_page.logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login_page.login') }}">Admin Login</a>
+            {% endif %}
+        </span>
     </div>
 </footer>
