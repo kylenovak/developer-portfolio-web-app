@@ -1,5 +1,5 @@
 from datetime import datetime
-from ..database import db
+from ..services.database import db
 
 
 class About(db.Model):

@@ -1,5 +1,5 @@
 from datetime import datetime
-from ..database import db
+from ..services.database import db
 from sqlalchemy.ext.hybrid import hybrid_property
 
 

@@ -1,5 +1,5 @@
 from flask import render_template
-from kylejnovak import app
+from .. import app
 
 
 @app.errorhandler(404)
