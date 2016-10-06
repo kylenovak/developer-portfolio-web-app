@@ -1,0 +1,12 @@
+// base.scss
+
+html, body {
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}

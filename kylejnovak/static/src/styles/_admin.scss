@@ -1,0 +1,60 @@
+// admin.scss
+
+@import 'globals';
+@import 'colors';
+@import 'mixins';
+
+div.admin-wrapper {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 0 20px;
+
+  div.title-wrapper {
+    max-width: $page-max-width;
+    margin: 30px auto 0 auto;
+  }
+
+  div.admin {
+    max-width: $page-max-width;
+    padding: 10px;
+    background: $secondary-color;
+    margin: 20px auto 30px auto;
+
+    @include border-radius(5px);
+    @include box-shadow(0 0 3px 1px rgba(0, 0, 0, 0.25));
+
+    ul.nav.nav-pills {
+      li a {
+        padding: 10px;
+      }
+    }
+
+    div.btn-toolbar {
+      a.dropdown-toggle {
+        display: none;
+      }
+      a.btn.btn-large {
+
+      }
+    }
+
+    ul.nav.nav-tabs.actions-nav {
+      li.dropdown {
+        display: none;
+      }
+    }
+
+    div.controls {
+      input, a.btn {
+        padding: 5px;
+
+        height: auto;
+        width: 100%;
+      }
+      input.btn, a.btn {
+        width: auto;
+      }
+    }
+  }
+}
