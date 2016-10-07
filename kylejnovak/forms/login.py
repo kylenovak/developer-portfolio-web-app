@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField, PasswordField
 from wtforms.validators import InputRequired, ValidationError
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
@@ -7,8 +7,8 @@ from ..models.user import User
 
 
 class LoginForm(FlaskForm):
-    username = StringField('username', validators=[InputRequired()])
-    password = StringField('password', validators=[InputRequired()])
+    username = StringField('Username', validators=[InputRequired()])
+    password = PasswordField('Password', validators=[InputRequired()])
 
     user = None
 

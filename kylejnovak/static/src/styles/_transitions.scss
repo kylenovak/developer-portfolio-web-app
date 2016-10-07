@@ -2,7 +2,7 @@
 
 $transition-speed: 0.5s;
 
-@mixin transition($args...) {
+@mixin transitions($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
   -ms-transition: $args;

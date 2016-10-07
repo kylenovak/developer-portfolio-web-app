@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField, PasswordField
 from wtforms.validators import InputRequired, Email, ValidationError
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
@@ -9,7 +9,7 @@ from ..models.user import User
 class RegistrationForm(FlaskForm):
     username = StringField('username', validators=[InputRequired()])
     email = StringField('email', validators=[InputRequired(), Email()])
-    password = StringField('password', validators=[InputRequired()])
+    password = PasswordField('password', validators=[InputRequired()])
 
     def validate_email(self, field):
         user = User.query.filter(User.email == self.email.data).first()

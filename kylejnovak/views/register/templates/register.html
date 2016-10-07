@@ -4,7 +4,7 @@
 
 {% block content %}
     <h1>Register User</h1>
-    <form method="POST" action="{{ url_for('register_page.register') }}">
+    <form id="registerForm" method="POST" action="{{ url_for('register_page.register') }}">
         {{ register_form.csrf_token }}
         {{ register_form.username.label }} {{ register_form.username(maxlength=255) }}
         {{ register_form.email.label }} {{ register_form.email(maxlength=255) }}

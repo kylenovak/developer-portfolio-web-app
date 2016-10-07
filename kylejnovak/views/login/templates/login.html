@@ -4,7 +4,7 @@
 
 {% block content %}
     <h1>Admin Login</h1>
-    <form method="POST" action="{{ url_for('login_page.login') }}">
+    <form id="loginForm" method="POST" action="{{ url_for('login_page.login') }}">
         {{ login_form.csrf_token }}
         {{ login_form.username.label }} {{ login_form.username(maxlength=255) }}
         {{ login_form.password.label }} {{ login_form.password(maxlength=255) }}

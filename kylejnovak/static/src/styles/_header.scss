@@ -23,7 +23,7 @@ header.page-header {
         font-weight: bolder;
         float: none;
 
-        @include transition(color $transition-speed);
+        @include transitions(color $transition-speed);
 
         &.active {
           color: $primary-color;
@@ -47,7 +47,7 @@ header.page-header {
             border: 2px solid #ffffff;
 
             @include border-radius(3px);
-            @include transition(color $transition-speed, border-color $transition-speed);
+            @include transitions(color $transition-speed, border-color $transition-speed);
 
             &:hover {
               color: $primary-color;

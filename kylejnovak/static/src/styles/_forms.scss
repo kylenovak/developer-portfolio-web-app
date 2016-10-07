@@ -1,0 +1,61 @@
+// forms.scss
+
+@import 'colors';
+@import 'mixins';
+@import 'transitions';
+
+form#loginForm,
+form#registerForm {
+  background: $secondary-color;
+
+  display: flex;
+  flex-flow: column;
+
+  padding: 10px 20px;
+  margin: 20px 0;
+
+  @include box-shadow(0 0 3px 1px rgba(0,0,0,0.25));
+  @include border-radius(5px);
+
+  .form-fix {
+    float: left;
+    clear: both;
+    width: 100%;
+
+    @include border-radius(3px);
+  }
+
+  label {
+    @extend .form-fix;
+
+    margin-top: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    @extend .form-fix;
+    @include transitions(border-color $transition-speed);
+
+    padding: 5px;
+    border: solid 2px #cccccc;
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+
+  input[type="submit"] {
+    @extend .form-fix;
+    @include transitions(background $transition-speed, color $transition-speed);
+
+    margin: 15px 0 10px 0;
+    padding: 10px;
+    border: solid 2px $primary-color;
+    background: transparent;
+
+    &:hover {
+      color: #ffffff;
+      background: $primary-color;
+    }
+  }
+}
