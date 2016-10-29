@@ -24,6 +24,6 @@ app.register_blueprint(view.login_page)
 app.register_blueprint(view.register_page)
 
 # data to set before each request
-from .services.before_requests import *
+from kylejnovak.services.before_requests import *
 # import error handlers
-from .services.error_handlers import *
+from kylejnovak.services.error_handlers import *
