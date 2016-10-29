@@ -9,20 +9,20 @@ from .services.login_manager import login_manager
 import os
 
 
-app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
+application = Flask(__name__)
+application.config.from_object(os.environ['APP_SETTINGS'])
 
-db.init_app(app)
-login_manager.init_app(app)
-admin.init_app(app)
+db.init_app(application)
+login_manager.init_app(application)
+admin.init_app(application)
 
-app.register_blueprint(view.home_page)
-app.register_blueprint(view.about_page)
-app.register_blueprint(view.contact_page)
-app.register_blueprint(view.projects_page)
-app.register_blueprint(view.resume_page)
-app.register_blueprint(view.login_page)
-app.register_blueprint(view.register_page)
+application.register_blueprint(view.home_page)
+application.register_blueprint(view.about_page)
+application.register_blueprint(view.contact_page)
+application.register_blueprint(view.projects_page)
+application.register_blueprint(view.resume_page)
+application.register_blueprint(view.login_page)
+application.register_blueprint(view.register_page)
 
 # data to set before each request
 from .services.before_requests import *
