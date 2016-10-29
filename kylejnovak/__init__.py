@@ -8,21 +8,23 @@ from .services.login_manager import login_manager
 
 import os
 
-
+# AWS EB only recognizes a callable object named application
 application = Flask(__name__)
-application.config.from_object(os.environ['APP_SETTINGS'])
+app = application
 
-db.init_app(application)
-login_manager.init_app(application)
-admin.init_app(application)
+app.config.from_object(os.environ['APP_SETTINGS'])
 
-application.register_blueprint(view.home_page)
-application.register_blueprint(view.about_page)
-application.register_blueprint(view.contact_page)
-application.register_blueprint(view.projects_page)
-application.register_blueprint(view.resume_page)
-application.register_blueprint(view.login_page)
-application.register_blueprint(view.register_page)
+db.init_app(app)
+login_manager.init_app(app)
+admin.init_app(app)
+
+app.register_blueprint(view.home_page)
+app.register_blueprint(view.about_page)
+app.register_blueprint(view.contact_page)
+app.register_blueprint(view.projects_page)
+app.register_blueprint(view.resume_page)
+app.register_blueprint(view.login_page)
+app.register_blueprint(view.register_page)
 
 # data to set before each request
 from .services.before_requests import *
