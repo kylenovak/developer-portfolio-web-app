@@ -1,9 +1,9 @@
 from flask_admin import Admin
 
-from ... import models
-from ...database import db
+from kylejnovak import models
+from kylejnovak.database import db
 
-from .model_views import CustomAdminIndexView, CustomFileAdmin, SecureModelView, ProjectModelView
+from kylejnovak.views.admin.model_views import CustomAdminIndexView, CustomFileAdmin, SecureModelView, ProjectModelView
 
 
 admin = Admin(name='Kyle J. Novak',

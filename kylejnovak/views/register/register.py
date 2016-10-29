@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, redirect, flash, url_for
 from flask_login import login_user
 
-from ...database import db
-from ...forms.register import RegistrationForm
-from ...models.user import User
+from kylejnovak.database import db
+from kylejnovak.forms.register import RegistrationForm
+from kylejnovak.models.user import User
 
 
 register_page = Blueprint('register_page', __name__, template_folder='templates')

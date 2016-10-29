@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
-from ...database import db
+from kylejnovak.database import db
 
-from ...models.project import Project
+from kylejnovak.models.project import Project
 
 from sqlalchemy.orm.exc import NoResultFound
 

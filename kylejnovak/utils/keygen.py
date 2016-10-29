@@ -1,5 +1,6 @@
 import random
-from .characters import Characters
+
+from kylejnovak.utils.characters import Characters
 
 
 class KeyGen(Characters):

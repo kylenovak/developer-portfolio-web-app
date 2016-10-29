@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
 
-from ...forms.login import LoginForm
+from kylejnovak.forms.login import LoginForm
 
 
 login_page = Blueprint('login_page', __name__, template_folder='templates')

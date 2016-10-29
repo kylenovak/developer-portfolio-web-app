@@ -5,9 +5,9 @@ from flask_admin.contrib.fileadmin import FileAdmin
 from flask_admin.form import SecureForm
 from flask_admin import AdminIndexView, expose
 
-from ...models.project import Project
+from kylejnovak.models.project import Project
 
-from .ckeditor import CKTextModelView
+from kylejnovak.views.admin.ckeditor import CKTextModelView
 
 
 class CustomAdminIndexView(AdminIndexView):

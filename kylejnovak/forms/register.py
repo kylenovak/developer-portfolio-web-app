@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField
 from wtforms.validators import InputRequired, Email, ValidationError
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
-from ..models.user import User
+from kylejnovak.models.user import User
 
 
 class RegistrationForm(FlaskForm):

@@ -1,7 +1,7 @@
 from flask import g, Markup
 
-from .. import app
-from . import copyright
+from kylejnovak import app
+from kylejnovak.services import copyright
 
 
 @app.before_request
