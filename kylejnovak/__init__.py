@@ -30,3 +30,7 @@ app.register_blueprint(view.register_page)
 from .services.before_requests import *
 # import error handlers
 from .services.error_handlers import *
+
+
+if __name__ == '__main__':
+    app.run()
