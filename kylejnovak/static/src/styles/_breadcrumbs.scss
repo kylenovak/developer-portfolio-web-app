@@ -1,0 +1,45 @@
+// breadcrumbs.scss
+
+@import 'colors';
+@import 'mixins';
+@import 'globals';
+@import 'transitions';
+
+div.breadcrumbs-wrapper {
+  @include box-shadow(0 0 3px 1px rgba(0,0,0,0.25));
+  width: 100%;
+  padding: 10px;
+
+  div.breadcrumbs {
+    max-width: $page-max-width;
+    margin: auto;
+
+    a.crumb {
+      display: inline-block;
+      min-width: 30px;
+      text-align: center;
+      font-weight: bolder;
+      padding: 5px;
+      background-color: #FFFFFF;
+      margin-right: 7px;
+
+      @include transitions(color $transition-speed, background-color $transition-speed);
+
+      @include border-radius(3px);
+      @include box-shadow(0 0 3px 1px rgba(0,0,0,0.25));
+
+      &.active {
+        color: #FFFFFF;
+        background-color: $primary-color;
+        cursor: default;
+        @include box-shadow(none);
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: #FFFFFF;
+        background-color: $primary-color;
+      }
+    }
+  }
+}

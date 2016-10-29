@@ -5,6 +5,8 @@ from flask_admin.contrib.fileadmin import FileAdmin
 from flask_admin.form import SecureForm
 from flask_admin import AdminIndexView, expose
 
+from ...models.project import Project
+
 from .ckeditor import CKTextModelView
 
 
@@ -39,6 +41,15 @@ class SecureModelView(CKTextModelView):
 
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('login_page.login'))
+
+    def on_model_change(self, form, model, is_created):
+        if isinstance(model, Project) and is_created:
+            model.url_slug = model.title.replace(' ', '-').lower()
+
+
+class ProjectModelView(SecureModelView):
+    """Project model view. Excludes the content field from the form."""
+    form_excluded_columns = ['url_slug', 'create_date', 'update_date']
 
 
 class CustomFileAdmin(FileAdmin):

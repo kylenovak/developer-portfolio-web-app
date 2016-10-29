@@ -17,6 +17,14 @@
     <div class="page-wrapper">
         {% include "header.html" %}
 
+        {% if  request.url_rule.endpoint not in ['home_page.home', 'login_page.login', 'register_page.register'] %}
+            <div class="breadcrumbs-wrapper">
+                <div class="breadcrumbs">
+                    {% block breadcrumbs %}{% endblock %}
+                </div>
+            </div>
+        {% endif %}
+
         <main class="page-content">
             {% block content %}{% endblock %}
         </main>

@@ -1,10 +1,10 @@
 from flask import Flask
 
 from . import views as view
+from .views.admin.admin_view import admin
 
-from .services.database import db
+from .database import db
 from .services.login_manager import login_manager
-from .services.admin.admin_view import admin
 
 import os
 

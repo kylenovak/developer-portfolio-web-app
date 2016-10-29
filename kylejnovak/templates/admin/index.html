@@ -2,16 +2,11 @@
 {% block body %}
 {{ super() }}
 <div class="row-fluid">
-    <h1>Flask-Admin example</h1>
-    <p class="lead">
-        Customize the layout
-    </p>
-    <p>
-        This example shows how you can customize the look & feel of the admin interface.
-    </p>
-    <p>
-        This is done by overriding some of the built-in templates.
-    </p>
-    <a class="btn btn-primary" href="/"><i class="icon-arrow-left icon-white"></i> Back</a>
+    <p>Welcome to the backend Admin Panel interface. This admin panel
+        allows you to modify the various frontend facing pages on
+        <a href="/">kylejnovak.com</a>,
+        such as: Projects, Resume, About, and Contact.</p>
+    <p>You can also <a href="/admin/customfileadmin/">upload images</a>  to the filesystem, which can then be
+        used as inline input for the previously mentioned pages.</p>
 </div>
 {% endblock body %}

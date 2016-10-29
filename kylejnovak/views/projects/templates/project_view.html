@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ project.title }} {{ super() }}{% endblock %}
+
+{% block breadcrumbs %}
+    <a href="/" class="crumb">/</a>
+    <a href="/projects" class="crumb">/Projects</a>
+    <a href="#" class="crumb active">/{{ project.title }}</a>
+{% endblock %}
+
+{% block content %}
+    {% if project %}
+        {{ project.content }}
+    {% endif %}
+{% endblock %}

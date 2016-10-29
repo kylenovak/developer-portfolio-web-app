@@ -2,6 +2,13 @@
 
 {% block title %}Projects {{ super() }}{% endblock %}
 
-{% block content %}
+{% block breadcrumbs %}
+    <a href="/" class="crumb">/</a>
+    <a href="#" class="crumb active">/Projects</a>
+{% endblock %}
 
+{% block content %}
+    {% for project in projects %}
+        <p><a href="/projects/{{ project.url_slug }}">{{ project.title }}</a></p>
+    {% endfor %}
 {% endblock %}
