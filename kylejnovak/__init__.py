@@ -8,10 +8,7 @@ from .services.login_manager import login_manager
 
 import os
 
-# AWS EB only recognizes a callable object named application
-application = Flask(__name__)
-app = application
-
+app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
 db.init_app(app)
@@ -30,7 +27,3 @@ app.register_blueprint(view.register_page)
 from .services.before_requests import *
 # import error handlers
 from .services.error_handlers import *
-
-
-if __name__ == '__main__':
-    app.run()
