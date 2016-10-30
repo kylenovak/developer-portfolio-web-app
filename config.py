@@ -10,9 +10,9 @@ class Config(object):
 
     CSRF_ENABLED = True
     WTF_CSRF_ENABLED = True
-    WTF_CSRF_SECRET_KEY = 'secretkey'
+    WTF_CSRF_SECRET_KEY = 's,XtdcQK4N]nQs&rCC&j1!oR.0FvMcsZ'
 
-    SECRET_KEY = 'secretkey'
+    SECRET_KEY = 'xTAJcB(pcH_Bdqti6OB;Isd0RZ=1+S_L'
 
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     SQLALCHEMY_TRACK_MODIFICATIONS = False
