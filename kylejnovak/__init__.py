@@ -1,12 +1,9 @@
 from flask import Flask
 
-from kylejnovak import views as view
-from kylejnovak.views.admin.admin_view import admin
-
 from kylejnovak.database import db
-from kylejnovak.services.login_manager import login_manager
 
 import os
+
 
 # AWS EB only recognizes a callable object named application
 application = app = Flask(__name__)
@@ -14,6 +11,11 @@ application = app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
 db.init_app(app)
+
+from kylejnovak import views as view
+from kylejnovak.views.admin.admin_view import admin
+from kylejnovak.services.login_manager import login_manager
+
 login_manager.init_app(app)
 admin.init_app(app)
 
