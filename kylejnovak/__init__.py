@@ -8,6 +8,7 @@ from kylejnovak.services.login_manager import login_manager
 
 import os
 
+
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
