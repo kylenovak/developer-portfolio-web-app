@@ -12,7 +12,7 @@ class Config(object):
     WTF_CSRF_ENABLED = True
     WTF_CSRF_SECRET_KEY = 'secretkey'
 
-    SECRET_KEY = KeyGen().get_random_key()
+    SECRET_KEY = 'secretkey'
 
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     SQLALCHEMY_TRACK_MODIFICATIONS = False
