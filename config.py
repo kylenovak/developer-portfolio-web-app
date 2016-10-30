@@ -10,7 +10,7 @@ class Config(object):
 
     CSRF_ENABLED = True
     WTF_CSRF_ENABLED = True
-    WTF_CSRF_SECRET_KEY = KeyGen().get_random_key()
+    WTF_CSRF_SECRET_KEY = 'secretkey'
 
     SECRET_KEY = KeyGen().get_random_key()
 
