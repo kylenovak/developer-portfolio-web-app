@@ -8,8 +8,9 @@ from kylejnovak.services.login_manager import login_manager
 
 import os
 
+# AWS EB only recognizes a callable object named application
+application = app = Flask(__name__)
 
-app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
 db.init_app(app)
