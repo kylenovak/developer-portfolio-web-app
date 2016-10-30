@@ -10,7 +10,7 @@ login_page = Blueprint('login_page', __name__, template_folder='templates')
 @login_page.route('/login', methods=('GET', 'POST'))
 def login():
     login_form = LoginForm()
-    app.logger.info("Attempting to login user:".format(login_form.user))
+    app.logger.info("Attempting to login user:".format(login_form.username))
     if login_form.validate_on_submit():
         # Tell Flask-Login that user has been authenticated.
         login_user(login_form.user)
