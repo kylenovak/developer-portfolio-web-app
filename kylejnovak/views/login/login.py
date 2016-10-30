@@ -14,6 +14,7 @@ def login():
     if login_form.validate_on_submit():
         # Tell Flask-Login that user has been authenticated.
         login_user(login_form.user)
+        app.logger.info("Logged in as user:".format(login_form.user))
         flash('User logged in successfully.')
         return redirect(url_for('admin.index'))
     return render_template('login.html', login_form=login_form)
