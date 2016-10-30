@@ -4,7 +4,6 @@ from wtforms.validators import InputRequired, ValidationError
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
 from kylejnovak.models.user import User
-from kylejnovak import app
 
 
 class LoginForm(FlaskForm):
@@ -15,9 +14,7 @@ class LoginForm(FlaskForm):
 
     def validate_password(self, field):
         try:
-            app.logger.info('Trying to login user: {}'.format(self.username.data))
             user = User.query.filter(User.username == self.username.data).one()
-            app.logger.info(user)
         except (MultipleResultsFound, NoResultFound):
             raise ValidationError('Invalid user')
 

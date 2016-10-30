@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user
 
 from kylejnovak.forms.login import LoginForm
-
+from kylejnovak import app
 
 login_page = Blueprint('login_page', __name__, template_folder='templates')
 
@@ -10,6 +10,7 @@ login_page = Blueprint('login_page', __name__, template_folder='templates')
 @login_page.route('/login', methods=('GET', 'POST'))
 def login():
     login_form = LoginForm()
+    app.logger.info("Attempting to login user:".format(login_form.user))
     if login_form.validate_on_submit():
         # Tell Flask-Login that user has been authenticated.
         login_user(login_form.user)
