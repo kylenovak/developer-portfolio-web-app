@@ -12,7 +12,7 @@ def login():
     login_form = LoginForm()
 
     if request.method == 'POST':
-        app.logger.info('Attempting to login as user: {}'.format(login_form.user))
+        app.logger.info('Attempting to login as user: {}'.format(login_form.username.value))
 
     if login_form.validate_on_submit():
         # Tell Flask-Login that user has been authenticated.
@@ -24,7 +24,7 @@ def login():
         return redirect(url_for('admin.index'))
 
     # Login failed, show login template.
-    app.logger.warning('Login attempt failed for: {}'.format(login_form.user))
+    app.logger.warning('Login attempt failed for: {}'.format(login_form.username.value))
     return render_template('login.html', login_form=login_form)
 
 
