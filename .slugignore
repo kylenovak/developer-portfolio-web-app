@@ -1,0 +1,8 @@
+kylejnovak/static/src/
+package.json
+tsconfig.json
+typings.json
+webpack.config.js
+.env
+.gitignore
+README.md
