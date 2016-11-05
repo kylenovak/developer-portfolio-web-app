@@ -17,6 +17,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     AUTHOR = 'Kyle J. Novak'
+
     YEAR_APP_BUILT = 2016
 
 

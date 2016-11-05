@@ -1,45 +1,58 @@
 // breadcrumbs.scss
-
 @import 'colors';
 @import 'mixins';
-@import 'globals';
+@import 'defaults';
 @import 'transitions';
 
-div.breadcrumbs-wrapper {
-  @include box-shadow(0 0 3px 1px rgba(0,0,0,0.25));
-  width: 100%;
-  padding: 10px;
 
-  div.breadcrumbs {
+nav.breadcrumbs {
+  overflow: hidden;
+  border-bottom: 1px solid #{$blue-grey-darken-2};
+
+  @include box-shadow(none);
+
+  div.nav-wrapper {
     max-width: $page-max-width;
     margin: auto;
 
-    a.crumb {
-      display: inline-block;
-      min-width: 30px;
-      text-align: center;
-      font-weight: bolder;
-      padding: 5px;
-      background-color: #FFFFFF;
-      margin-right: 7px;
+    div.col {
+      padding: 0;
+    }
 
-      @include transitions(color $transition-speed, background-color $transition-speed);
+    a.breadcrumb {
+      span.breadcrumb-text {
+        padding: 10px;
 
-      @include border-radius(3px);
-      @include box-shadow(0 0 3px 1px rgba(0,0,0,0.25));
+        @include border-radius(5px);
 
-      &.active {
-        color: #FFFFFF;
-        background-color: $primary-color;
-        cursor: default;
-        @include box-shadow(none);
-      }
+        &.active {
+          color: #FFFFFF;
+          background-color: $blue-grey-darken-2;
+          cursor: default;
+        }
 
-      &:hover {
-        text-decoration: none;
-        color: #FFFFFF;
-        background-color: $primary-color;
+        &:hover {
+          text-decoration: none;
+          color: #FFFFFF;
+          background-color: $blue-grey-darken-2;
+        }
+
+         @include transitions(color $transition-speed, background-color $transition-speed);
       }
     }
+
+    div.social-icons a {
+      display: inline-block;
+      padding: 0 10px;
+
+      margin-right: -4px;
+
+      @include transitions($transition-speed color);
+
+      &:hover {
+        color: #4caf50;
+      }
+    }
+
   }
 }

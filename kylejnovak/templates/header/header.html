@@ -1,0 +1,21 @@
+<header class="page-header">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="/" class="brand-logo green-text {% if request.url_rule.endpoint == 'home_page.home' %}active{% endif %}">
+                <strong>KYLE JOSEPH NOVAK</strong>
+            </a>
+
+            <ul class="right hide-on-med-and-down">
+                {% include "header/navlinks.html" %}
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                {% include "header/navlinks.html" %}
+            </ul>
+
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
+</header>

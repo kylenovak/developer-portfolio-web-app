@@ -1,10 +1,27 @@
 // content.scss
 
-@import 'globals';
+@import "defaults";
+@import "colors";
+@import "transitions";
 
 
 main.page-content {
   max-width: $page-max-width;
-  margin: auto;
+  margin: 15px auto;
   padding: 0;
+
+  div.card-panel {
+    ul.collection {
+      a.collection-item {
+        color: #0277bd;
+
+        @include transitions($transition-speed color, $transition-speed background);
+
+        &.active {
+          color: #FFFFFF;
+          background: #0277bd;
+        }
+      }
+    }
+  }
 }

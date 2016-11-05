@@ -23,4 +23,7 @@ def project_view(url_slug):
     except NoResultFound:
         return render_template('page_not_found.html'), 404
 
-    return render_template('project_view.html', project=project)
+    projects = db.session.query(Project)\
+        .order_by(Project.create_date.desc()).all()
+
+    return render_template('project_view.html', project=project, projects=projects)

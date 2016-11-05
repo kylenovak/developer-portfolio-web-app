@@ -3,13 +3,29 @@
 {% block title %}{{ project.title }} {{ super() }}{% endblock %}
 
 {% block breadcrumbs %}
-    <a href="/" class="crumb">/</a>
-    <a href="/projects" class="crumb">/Projects</a>
-    <a href="#" class="crumb active">/{{ project.title }}</a>
+    <a href="/" class="breadcrumb"><span class="breadcrumb-text">Home</span></a>
+    <a href="/projects" class="breadcrumb"><span class="breadcrumb-text">Projects</span></a>
+    <a href="#" class="breadcrumb"><span class="breadcrumb-text active">{{ project.title }}</span></a>
 {% endblock %}
 
 {% block content %}
-    {% if project %}
-        {{ project.content }}
-    {% endif %}
+    <div class="row">
+        <div class="col s8">
+            <div class="card-panel">
+                {% if project %}
+                    {{ project.content }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card-panel">
+                <ul class="collection with-header">
+                    <li class="collection-header"><h4 class="green-text center">Projects</h4></li>
+                    {% for proj in projects %}
+                        <li><a href="/projects/{{ proj.url_slug }}" class="collection-item {% if project.title == proj.title %}active{% endif %}">{{ proj.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}

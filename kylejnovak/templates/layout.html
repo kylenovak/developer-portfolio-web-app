@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
     {% block head %}
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
         <title>{% block title %}{% endblock %} | Kyle J. Novak</title>
-         <!--Import Google Icon Font-->
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='dist/bundle.css') }}">
+        <!-- CSS  -->
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" media="screen,projection" />
+        <!-- Import Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen,projection" />
+        <!-- Import Materialize -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen,projection" />
+        <!-- Import main css styles -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='dist/bundle.css') }}" type="text/css" media="screen,projection" />
     {% endblock %}
 </head>
 <body>
@@ -22,14 +24,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
 
     <div class="page-wrapper">
-        {% include "header.html" %}
+        {% include "header/header.html" %}
 
         {% if  request.url_rule.endpoint not in ['home_page.home', 'login_page.login', 'register_page.register'] %}
-            <div class="breadcrumbs-wrapper">
-                <div class="breadcrumbs">
-                    {% block breadcrumbs %}{% endblock %}
+            <nav class="breadcrumbs light-blue darken-3">
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <div class="col s6">
+                            {% block breadcrumbs %}{% endblock %}
+                        </div>
+                        <div class="col s6">
+                            <div class="social-icons right">
+                                <span class="new badge green" data-badge-caption="&laquo; Social Connect"></span>
+                                <a href="#"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </nav>
         {% endif %}
 
         <main class="page-content">
@@ -41,6 +55,6 @@
 
     <script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
     {# Remove this script in production #}
-    {#<script src="http://localhost:35729/livereload.js"></script>#}
+    <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>
