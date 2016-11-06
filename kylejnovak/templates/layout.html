@@ -26,25 +26,23 @@
     <div class="page-wrapper">
         {% include "header/header.html" %}
 
-        {% if  request.url_rule.endpoint not in ['home_page.home', 'login_page.login', 'register_page.register'] %}
-            <nav class="breadcrumbs light-blue darken-3">
-                <div class="nav-wrapper">
-                    <div class="row">
-                        <div class="col s6">
-                            {% block breadcrumbs %}{% endblock %}
-                        </div>
-                        <div class="col s6">
-                            <div class="social-icons right">
-                                <span class="new badge green" data-badge-caption="&laquo; Social Connect"></span>
-                                <a href="#"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
-                            </div>
+        <nav class="breadcrumbs light-blue darken-3">
+            <div class="nav-wrapper">
+                <div class="row">
+                    <div class="col s8">
+                        {% block breadcrumbs %}{% endblock %}
+                    </div>
+                    <div class="col s4">
+                        <div class="social-icons right">
+                            <span class="new badge green" data-badge-caption="&laquo; Social Connect"></span>
+                            <a href="https://www.linkedin.com/in/KyleJosephNovak" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+                            <a href="https://www.twitter.com/KyleJosephNovak" target="_blank"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+                            <a href="https://github.com/kylenovak" target="_blank"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
-            </nav>
-        {% endif %}
+            </div>
+        </nav>
 
         <main class="page-content">
             {% block content %}{% endblock %}
@@ -53,6 +51,18 @@
         {% include "footer.html" %}
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script>
+        (function($){
+          $(function(){
+
+            $('.button-collapse').sideNav();
+
+          }); // end of document ready
+        })(jQuery); // end of jQuery name space
+    </script>
     <script src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
     {# Remove this script in production #}
     <script src="http://localhost:35729/livereload.js"></script>

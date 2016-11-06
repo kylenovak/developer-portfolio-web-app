@@ -4,12 +4,19 @@
 @import 'defaults';
 @import 'transitions';
 
-
 nav.breadcrumbs {
-  overflow: hidden;
-  border-bottom: 1px solid #{$blue-grey-darken-2};
+  @media all and (max-width: 993px) {
+    div.col.s4 {
+      display: none;
+    }
+  }
 
-  @include box-shadow(none);
+  @media all and (max-width: 800px) {
+    display: none;
+  }
+
+  overflow: hidden;
+  padding: 0 10px;
 
   div.nav-wrapper {
     max-width: $page-max-width;
@@ -27,32 +34,40 @@ nav.breadcrumbs {
 
         &.active {
           color: #FFFFFF;
-          background-color: $blue-grey-darken-2;
+          background-color: $blue-2;
           cursor: default;
         }
 
         &:hover {
           text-decoration: none;
           color: #FFFFFF;
-          background-color: $blue-grey-darken-2;
+          background-color: $blue-2;
         }
 
-         @include transitions(color $transition-speed, background-color $transition-speed);
+        @include transitions(color $transition-speed, background-color $transition-speed);
       }
     }
 
-    div.social-icons a {
-      display: inline-block;
-      padding: 0 10px;
+    div.social-icons {
+      span.badge {
+        font-size: 12px;
+        margin-top: 10px;
+        line-height: 45px;
+        font-weight: bold;
+      }
 
-      margin-right: -4px;
+      a {
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 15px;
+        margin-right: -4px;
 
-      @include transitions($transition-speed color);
+        @include transitions($transition-speed color);
 
-      &:hover {
-        color: #4caf50;
+        &:hover {
+          color: $green;
+        }
       }
     }
-
   }
 }

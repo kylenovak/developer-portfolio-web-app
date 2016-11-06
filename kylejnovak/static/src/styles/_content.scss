@@ -3,6 +3,7 @@
 @import "defaults";
 @import "colors";
 @import "transitions";
+@import "mixins";
 
 
 main.page-content {
@@ -11,15 +12,17 @@ main.page-content {
   padding: 0;
 
   div.card-panel {
+    @include box-shadow();
+
     ul.collection {
       a.collection-item {
-        color: #0277bd;
+        color: $blue;
 
         @include transitions($transition-speed color, $transition-speed background);
 
         &.active {
           color: #FFFFFF;
-          background: #0277bd;
+          background: $blue;
         }
       }
     }
