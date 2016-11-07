@@ -9,10 +9,13 @@
 
 {% block content %}
     <div class="row">
-        <div class="col s12">
-            {% for project in projects %}
-                <p><a href="/projects/{{ project.url_slug }}">{{ project.title }}</a></p>
-            {% endfor %}
+        <div class="col s6">
+            <ul>
+                {% for project in projects %}
+                    <li><a href="/projects/{{ project.url_slug }}">{{ project.title }}</a></li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
+
 {% endblock %}
