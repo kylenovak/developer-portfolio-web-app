@@ -3,6 +3,8 @@
 @import "transitions";
 @import "colors";
 @import "mixins";
+@import "animation";
+
 
 header.page-header {
   nav {
@@ -48,7 +50,7 @@ header.page-header {
         margin-left: 3px;
       }
 
-      ul.side-nav li a {
+      div.side-nav ul li a {
         background: #333333;
         border-bottom: 1px solid #212121;
         padding-left: 20px;
@@ -70,6 +72,7 @@ header.page-header {
         &:hover i {
           color: #FFFFFF;
         }
+
         &.active {
           color: #FFFFFF;
           background: $green;
@@ -79,7 +82,7 @@ header.page-header {
         }
       }
 
-      ul.side-nav li a.side-logo {
+      div.side-nav ul li a.side-logo {
         background: $green;
         color: #333333;
         font-weight: bold;
@@ -93,7 +96,9 @@ header.page-header {
         }
       }
 
-      ul.side-nav {
+      div.side-nav ul {
+        position: relative;
+        min-height: 100vh;
         background: #212121;
         overflow: hidden;
 
@@ -106,12 +111,16 @@ header.page-header {
           a {
             @include transitions($transition-speed background);
 
-            padding-bottom: 30px;
+            display: block;
             padding-left: 30px;
             width: 100px;
             float: left;
             text-align: center;
             border-right: 1px solid #212121;
+
+            &:hover i {
+              @extend .shake;
+            }
 
             i {
               text-align: center;

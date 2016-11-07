@@ -1,22 +1,78 @@
 // footer.scss
-@import 'mixins';
-@import 'colors';
-@import 'defaults';
-
+@import "mixins";
+@import "colors";
+@import "defaults";
+@import "transitions";
 
 footer.page-footer {
-  $footer-height: 40px;
-
-  background-color: $secondary-color;
-  height: $footer-height;
+  background: #FFFFFF;
 
   @include box-shadow();
 
   div.container {
     max-width: $page-max-width;
-    height: inherit;
-    display: flex;
-    align-items: center; // vertical center alignment
-    justify-content: center; // horizontal center alignment
+    padding: 0;
+
+    @media all and (min-width: 1200px) {
+      width: 100%;
+    }
+
+    h5 {
+      color: $green;
+    }
+
+    div.col {
+      padding-right: 30px;
+    }
+    div.col:last-child {
+      padding-right: 0;
+    }
+
+    div#footer-browse-nav ul li a {
+      display: block;
+      color: $blue;
+      padding-top: 5px;
+      padding-left: 10px;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+
+      @include border-radius(3px);
+      @include transitions($transition-speed color, $transition-speed background);
+
+      &:hover {
+        background: #e0e0e0;
+      }
+    }
+
+    ul.footer-social-icons li {
+      float: left;
+      margin-right: 15px;
+
+      a {
+        @include transitions($transition-speed color);
+        color: $blue;
+      }
+
+      a:hover {
+        color: $green;
+      }
+    }
+  }
+
+  div.footer-copyright {
+    background: $blue-2;
+
+    div.container {
+      color: #FFFFFF;
+
+      a {
+        color: $green;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }

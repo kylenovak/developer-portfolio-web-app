@@ -2,6 +2,10 @@
 
 {% block title %}Home {{ super() }}{% endblock %}
 
+{% block breadcrumbs %}
+    <a href="/" class="breadcrumb"><span class="breadcrumb-text active">Home</span></a>
+{% endblock %}
+
 {% block content %}
     <div class="home-content">
 

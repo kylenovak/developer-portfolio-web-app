@@ -1,10 +1,13 @@
 // breadcrumbs.scss
-@import 'colors';
-@import 'mixins';
-@import 'defaults';
-@import 'transitions';
+@import "colors";
+@import "mixins";
+@import "defaults";
+@import "transitions";
+@import "animation";
 
 nav.breadcrumbs {
+  background-color: $blue;
+
   @media all and (max-width: 993px) {
     div.col.s4 {
       display: none;
@@ -15,7 +18,6 @@ nav.breadcrumbs {
     display: none;
   }
 
-  overflow: hidden;
   padding: 0 10px;
 
   div.nav-wrapper {
@@ -57,15 +59,16 @@ nav.breadcrumbs {
       }
 
       a {
-        display: inline-block;
+        display: block;
+        float: left;
         padding: 0 10px;
         font-size: 15px;
-        margin-right: -4px;
 
         @include transitions($transition-speed color);
 
         &:hover {
           color: $green;
+          @extend .shake;
         }
       }
     }

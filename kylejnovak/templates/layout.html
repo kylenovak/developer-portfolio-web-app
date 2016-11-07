@@ -8,48 +8,38 @@
 
         <title>{% block title %}{% endblock %} | Kyle J. Novak</title>
 
-        <!-- CSS  -->
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" media="screen,projection" />
-        <!-- Import Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen,projection" />
-        <!-- Import Materialize -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen,projection" />
-        <!-- Import main css styles -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='dist/bundle.css') }}" type="text/css" media="screen,projection" />
+        {% include "stylesheets.html" %}
     {% endblock %}
 </head>
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
 
-    <div class="page-wrapper">
-        {% include "header/header.html" %}
+    {% include "header/header.html" %}
 
-        <nav class="breadcrumbs light-blue darken-3">
-            <div class="nav-wrapper">
-                <div class="row">
-                    <div class="col s8">
-                        {% block breadcrumbs %}{% endblock %}
-                    </div>
-                    <div class="col s4">
-                        <div class="social-icons right">
-                            <span class="new badge green" data-badge-caption="&laquo; Social Connect"></span>
-                            <a href="https://www.linkedin.com/in/KyleJosephNovak" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-                            <a href="https://www.twitter.com/KyleJosephNovak" target="_blank"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-                            <a href="https://github.com/kylenovak" target="_blank"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
-                        </div>
+    <nav class="breadcrumbs">
+        <div class="nav-wrapper">
+            <div class="row">
+                <div class="col s8">
+                    {% block breadcrumbs %}{% endblock %}
+                </div>
+                <div class="col s4">
+                    <div class="social-icons right">
+                        <span class="new badge green" data-badge-caption="&laquo; Social Connect"></span>
+                        {% include "header/social_links.html" %}
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
+    <div class="page-content-wrapper">
         <main class="page-content">
             {% block content %}{% endblock %}
         </main>
-
-        {% include "footer.html" %}
     </div>
+
+    {% include "footer.html" %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->

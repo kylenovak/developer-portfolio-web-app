@@ -1,7 +1,8 @@
 <header class="page-header">
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="/" class="brand-logo green-text {% if request.url_rule.endpoint == 'home_page.home' %}active{% endif %}">
+            <a id="logo-container" href="/"
+               class="brand-logo green-text {% if request.url_rule.endpoint == 'home_page.home' %}active{% endif %}">
                 <strong>KYLE JOSEPH NOVAK</strong>
             </a>
 
@@ -9,16 +10,21 @@
                 {% include "header/navlinks.html" %}
             </ul>
 
-            <ul id="nav-mobile" class="side-nav">
-                 <li><a href="/" class="center side-logo">KYLE J. NOVAK</a></li>
-                {% include "header/navlinks.html" %}
+            <div id="nav-mobile" class="side-nav">
+                <ul>
+                    <li><a href="/" class="center side-logo">KYLE J. NOVAK</a></li>
+                    {% include "header/navlinks.html" %}
 
-                <li id="side-nav-social">
-                    <a href="https://www.linkedin.com/in/KyleJosephNovak" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-                    <a href="https://www.twitter.com/KyleJosephNovak" target="_blank"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-                    <a href="https://github.com/kylenovak" target="_blank"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
-                </li>
-            </ul>
+                    <li id="side-nav-social">
+                        <a href="https://www.linkedin.com/in/KyleJosephNovak" target="_blank"><i
+                                class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+                        <a href="https://www.twitter.com/KyleJosephNovak" target="_blank"><i
+                                class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+                        <a href="https://github.com/kylenovak" target="_blank"><i class="fa fa-github-square fa-3x"
+                                                                                  aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
 
             <a href="#" data-activates="nav-mobile" class="button-collapse">
                 <i class="material-icons">menu</i>

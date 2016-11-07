@@ -1,28 +1,43 @@
 // content.scss
-
 @import "defaults";
 @import "colors";
 @import "transitions";
 @import "mixins";
 
+div.page-content-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
 
-main.page-content {
-  max-width: $page-max-width;
-  margin: 15px auto;
-  padding: 0;
+  main.page-content {
+    max-width: $page-max-width;
+    width: 100%;
 
-  div.card-panel {
-    @include box-shadow();
+    flex: 1 0 auto;
 
-    ul.collection {
-      a.collection-item {
-        color: $blue;
+    margin: 15px auto;
+    padding: 0;
 
-        @include transitions($transition-speed color, $transition-speed background);
+    div.main-content.col {
+      padding-left: 0;
+    }
+    div.side-content.col {
+      padding-right: 0;
+    }
 
-        &.active {
-          color: #FFFFFF;
-          background: $blue;
+    div.card-panel {
+      @include box-shadow();
+
+      ul.collection {
+        a.collection-item {
+          color: $blue;
+
+          @include transitions($transition-speed color, $transition-speed background);
+
+          &.active {
+            color: #FFFFFF;
+            background: $blue;
+          }
         }
       }
     }
