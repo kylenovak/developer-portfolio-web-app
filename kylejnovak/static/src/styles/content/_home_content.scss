@@ -9,7 +9,7 @@ div.home-content {
   }
 
   .h2-margin-top {
-    margin-top: 60px;
+    margin-top: 50px;
   }
 
   .margin-top {
@@ -56,11 +56,16 @@ div.home-content {
     .carousel-item {
 
       min-height: 150px;
+      &:hover {
+        cursor: move;
+      }
 
       p {
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        -webkit-transform: perspective(1px) translateY(-50%);
+        -ms-transform: perspective(1px) translateY(-50%);
+        transform: perspective(1px) translateY(-50%);
 
         color: $blue;
         margin: auto;
@@ -70,6 +75,10 @@ div.home-content {
         line-height: 1em;
         font-weight: lighter;
         font-size: 2em;
+
+        em {
+          font-weight: 300;
+        }
       }
     }
   }
