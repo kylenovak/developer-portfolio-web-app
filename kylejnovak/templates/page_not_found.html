@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Page not found!</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}Page Not Found (404 error)! {{ super() }}{% endblock %}
+
+{% block breadcrumbs %}
+    <a href="/" class="breadcrumb"><span class="breadcrumb-text">Home</span></a>
+    <a href="#" class="breadcrumb"><span class="breadcrumb-text active">Page not found</span></a>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+// buttons.scss
+
+@import "colors";
+
+.btn {
+  display: inline-block;
+}
+
+.block {
+  width: 100%;
+}
+
+.btn-green {
+  background-color: $green;
+}
+.btn-green:active,
+.btn-green:focus,
+.btn-green:hover {
+  background-color: $green-light;
+}
+
+.btn-blue {
+  background-color: $blue;
+}
+.btn-blue:active,
+.btn-blue:focus,
+.btn-blue:hover {
+  background-color: $blue-light;
+}

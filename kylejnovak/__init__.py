@@ -31,3 +31,5 @@ app.register_blueprint(view.register_page)
 from kylejnovak.services.before_requests import *
 # import error handlers
 from kylejnovak.services.error_handlers import *
+# import template filters
+from kylejnovak.services.template_filters import *

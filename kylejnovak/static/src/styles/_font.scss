@@ -1,0 +1,11 @@
+// font.scss
+
+.font-shrink {
+  font-size: 0.8em;
+}
+
+.text-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -9,13 +9,26 @@
 
 {% block content %}
     <div class="row">
-        <div class="col s6">
-            <ul>
-                {% for project in projects %}
-                    <li><a href="/projects/{{ project.url_slug }}">{{ project.title }}</a></li>
-                {% endfor %}
-            </ul>
+        <div class="main-content col s8">
+            <div class="card-panel">
+                <div class="collection with-header">
+                    <div class="collection-header">
+                        <h4>My Projects</h4>
+                    </div>
+                    {% for project in projects %}
+                        <a class="collection-item" href="/projects/{{ project.url_slug }}">{{ project.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="side-content col s4">
+            <div class="card-panel">
+                <ul class="collection with-header">
+                    <li class="collection-header"><h4>Let's Collaborate</h4></li>
+                    <li class="collection-item"><p>Contact me if you think I'd be interested in working on a project with you and your team!</p></li>
+                    <li class="collection-item"><a href="/contact" class="waves-effect waves-light block btn-green btn-large center">Collaborate</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-
 {% endblock %}

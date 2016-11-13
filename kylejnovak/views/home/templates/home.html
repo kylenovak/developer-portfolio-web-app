@@ -8,7 +8,77 @@
 
 {% block content %}
     <div class="home-content">
+        <h2><i class="fa fa-github-alt green-text" aria-hidden="true"></i> My Starred GitHub Repos</h2>
+        <ul id="starred-repos">
+            {% for repo in github_repos %}
+                {% if loop.index == 7 %}
+                    <div id="starred-repos-more">
+                {% endif %}
 
+            {% if loop.index0 % 3 == 0 %}
+                <li class="row">
+            {% endif %}
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-content center">
+                        <div class="text-wrap">
+                            <a href="{{ repo['html_url'] }}" class="card-text" target="_blank">
+                                <span class="card-title">{{ repo['name'] }}</span>
+                            </a>
+                            <p class="text-wrap">{{ repo['description'] }}</p>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                                        <span class="new badge blue darken-2" data-badge-caption=""><i
+                                                class="fa fa-code-fork"
+                                                aria-hidden="true"></i> {{ repo['forks_count'] }}</span>
+                        <span class="new badge blue darken-2" data-badge-caption=""><i class="fa fa-star"
+                                                                                       aria-hidden="true"></i> {{ repo['stargazers_count'] }}</span>
+                        <span class="font-shrink">Updated: {{ repo['updated_at'] | datetime }}</span>
+                    </div>
+                </div>
+            </div>
+            {% if loop.index0 % 3 == 2 %}
+                </li>{# end of li.row #}
+            {% endif %}
+
+            {% if loop.index == github_repos_length %}
+                </div>{# end of starred-repos-more #}
+
+                <li class="row show-more">
+                    <button id="show-starred-repos" class="waves-effect waves-light btn-blue btn-large center">
+                        <i class="fa fa-github-alt" aria-hidden="true"></i> Show More
+                    </button>
+                    <a href="https://github.com/kylenovak?tab=stars" target="_blank">
+                        <button id="view-all-starred-repos"
+                                class="waves-effect waves-light btn-blue btn-large center hidden">
+                            <i class="fa fa-github-alt" aria-hidden="true"></i> View All
+                        </button>
+                    </a>
+                </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+
+        <h2 class="h2-margin-top"><i class="blue-text fa fa-twitter" aria-hidden="true"></i> My Recent Tweets</h2>
+        <div class="carousel carousel-slider center">
+            <div class="carousel-item white" href="#one!">
+                <h2>First Panel</h2>
+                <p>This is your first panel</p>
+            </div>
+            <div class="carousel-item white" href="#two!">
+                <h2>Second Panel</h2>
+                <p>This is your second panel</p>
+            </div>
+            <div class="carousel-item white" href="#three!">
+                <h2>Third Panel</h2>
+                <p>This is your third panel</p>
+            </div>
+            <div class="carousel-item white" href="#four!">
+                <h2>Fourth Panel</h2>
+                <p>This is your fourth panel</p>
+            </div>
+        </div>
     </div>
 {% endblock %}
 

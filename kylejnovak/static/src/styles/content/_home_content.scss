@@ -1,0 +1,51 @@
+// home_content.scss
+@import "../colors";
+@import "../mixins";
+@import "../transitions";
+
+div.home-content {
+  h2 {
+    font-size: 2.5em;
+  }
+
+  .h2-margin-top {
+    margin-top: 40px;
+  }
+
+  .card {
+    @include box-shadow();
+  }
+  .card .card-action {
+    padding: 10px 20px 10px 20px;
+  }
+
+  ul#starred-repos li.row.show-more {
+    text-align: center;
+  }
+
+  div#starred-repos-more {
+    display: none;
+  }
+
+  a.card-text {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #FFFFFF;
+    background-color: $green-light;
+    padding: 3px;
+    @include border-radius(3px);
+    @include transitions($transition-speed background-color);
+  }
+
+  a.card-text:hover {
+    background-color: $green;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .carousel.carousel-slider .carousel-item {
+    min-height: 200px;
+  }
+}
