@@ -4,6 +4,10 @@ import requests
 import json
 
 
+def get_github_username():
+    return app.config['GITHUB_USERNAME']
+
+
 def get_github_starred_repos():
     starred_repos = []
 

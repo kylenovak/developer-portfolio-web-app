@@ -49,7 +49,7 @@
                     <button id="show-starred-repos" class="waves-effect waves-light btn-blue btn-large center">
                         <i class="fa fa-github-alt" aria-hidden="true"></i> Show More
                     </button>
-                    <a href="https://github.com/kylenovak?tab=stars" target="_blank">
+                    <a href="https://github.com/{{ github_username }}?tab=stars" target="_blank">
                         <button id="view-all-starred-repos"
                                 class="waves-effect waves-light btn-blue btn-large center hidden">
                             <i class="fa fa-github-alt" aria-hidden="true"></i> View All
@@ -62,22 +62,19 @@
 
         <h2 class="h2-margin-top"><i class="blue-text fa fa-twitter" aria-hidden="true"></i> My Recent Tweets</h2>
         <div class="carousel carousel-slider center">
-            <div class="carousel-item white" href="#one!">
-                <h2>First Panel</h2>
-                <p>This is your first panel</p>
-            </div>
-            <div class="carousel-item white" href="#two!">
-                <h2>Second Panel</h2>
-                <p>This is your second panel</p>
-            </div>
-            <div class="carousel-item white" href="#three!">
-                <h2>Third Panel</h2>
-                <p>This is your third panel</p>
-            </div>
-            <div class="carousel-item white" href="#four!">
-                <h2>Fourth Panel</h2>
-                <p>This is your fourth panel</p>
-            </div>
+            {% for tweet in recent_tweets %}
+                <div class="carousel-item white">
+                    <p><i class="fa fa-quote-left grey-text text-lighten-1" aria-hidden="true"></i> {{ tweet['text'] }}
+                        <i class="fa fa-quote-right grey-text text-lighten-1" aria-hidden="true"></i></p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row show-more">
+            <a href="https://twitter.com/{{ twitter_username }}" target="_blank">
+                <button class="waves-effect waves-light btn-green btn-large center margin-top">
+                    <i class="fa fa-twitter" aria-hidden="true"></i> View All
+                </button>
+            </a>
         </div>
     </div>
 {% endblock %}
