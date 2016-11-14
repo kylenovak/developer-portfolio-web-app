@@ -6,6 +6,8 @@
 @import "animation";
 
 nav.breadcrumbs {
+  margin-bottom: 20px;
+
   background-color: $blue;
 
   @media all and (max-width: 993px) {

@@ -8,7 +8,60 @@
 
 {% block content %}
     <div class="home-content">
-        <h2 id="repos"><i class="fa fa-github-alt green-text" aria-hidden="true"></i> My Starred GitHub Repos</h2>
+        <div class="row" style="width:100%;display: table; padding: 0 10px;">
+            <div class="col s6" style="display: table-cell;height: 100%;float:none;position:relative">
+                <div class="card-panel center" style="margin:0;height: 100%;position:absolute;top:0;left:0;width:100%;">
+                    <h2 class="no-margin-top">Talented</h2>
+                    <i class="fa fa-bar-chart fa-5x" aria-hidden="true"></i>
+
+                </div>
+            </div>
+            <div class="col s6" style="padding-left: 20px;padding-right:0;display: table-cell;height: 100%;float:none;">
+                <div class="row">
+                    <a href="/projects">
+                        <div class="card-panel center green no-margin-bottom  no-margin-top">
+                            <h2 class="no-margin-top white-text">My Projects</h2>
+                            <i class="fa fa-keyboard-o fa-5x white-text" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="row no-margin-bottom">
+                    <a href="/resume">
+                        <div class="card-panel center blue darken-2 no-margin-bottom">
+                            <h2 class="no-margin-top white-text">My R&eacute;sum&eacute;</h2>
+                            <i class="fa fa-folder-open-o fa-5x white-text" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s4">
+                <div class="card-panel center">
+                    <h2 class="no-margin-top">Talented</h2>
+                    <i class="fa fa-bar-chart fa-5x" aria-hidden="true"></i>
+
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card-panel center">
+                    <h2 class="no-margin-top">Collaborative</h2>
+                    <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card-panel center">
+                    <h2 class="no-margin-top">Academic</h2>
+                    <i class="fa fa-university fa-5x" aria-hidden="true"></i>
+
+                </div>
+            </div>
+        </div>
+
+        <h2 id="repos" class="h2-margin-top"><i class="fa fa-github-alt green-text" aria-hidden="true"></i> My Starred
+            GitHub Repos</h2>
         <ul id="starred-repos">
             {% for repo in github_repos %}
                 {% if loop.index == 7 %}
@@ -60,14 +113,20 @@
             {% endfor %}
         </ul>
 
-        <h2 id="tweets" class="h2-margin-top"><i class="blue-text fa fa-twitter" aria-hidden="true"></i> My Recent Tweets</h2>
-        <div class="carousel carousel-slider center">
-            {% for tweet in recent_tweets %}
-                <div class="carousel-item white">
-                    <p class="tweet-text"><i class="fa fa-quote-left grey-text text-lighten-1" aria-hidden="true"></i> {{ tweet['text'] }}
-                        <i class="fa fa-quote-right grey-text text-lighten-1" aria-hidden="true"></i></p>
+        <h2 id="tweets" class="h2-margin-top"><i class="blue-text fa fa-twitter" aria-hidden="true"></i> My Recent
+            Tweets</h2>
+        <div class="row no-margin-bottom">
+            <div class="col s12">
+                <div class="carousel carousel-slider center">
+                    {% for tweet in recent_tweets %}
+                        <div class="carousel-item white">
+                            <p class="tweet-text"><i class="fa fa-quote-left grey-text text-lighten-1"
+                                                     aria-hidden="true"></i> {{ tweet['text'] }}
+                                <i class="fa fa-quote-right grey-text text-lighten-1" aria-hidden="true"></i></p>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            </div>
         </div>
         <div class="row show-more">
             <a href="https://twitter.com/{{ twitter_username }}" target="_blank">

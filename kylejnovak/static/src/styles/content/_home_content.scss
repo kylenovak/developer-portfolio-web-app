@@ -8,6 +8,16 @@ div.home-content {
     @include box-shadow();
   }
 
+  .no-margin-top {
+    margin-top: 0;
+  }
+  .no-margin-bottom {
+    margin-bottom: 0;
+  }
+  .no-padding-bottom {
+    padding-bottom: 0;
+  }
+
   @media all and (max-width: 664px) {
     div.col.s4 {
       width: 100%;
