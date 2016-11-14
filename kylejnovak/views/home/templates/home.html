@@ -8,7 +8,7 @@
 
 {% block content %}
     <div class="home-content">
-        <h2><i class="fa fa-github-alt green-text" aria-hidden="true"></i> My Starred GitHub Repos</h2>
+        <h2 id="repos"><i class="fa fa-github-alt green-text" aria-hidden="true"></i> My Starred GitHub Repos</h2>
         <ul id="starred-repos">
             {% for repo in github_repos %}
                 {% if loop.index == 7 %}
@@ -60,11 +60,11 @@
             {% endfor %}
         </ul>
 
-        <h2 class="h2-margin-top"><i class="blue-text fa fa-twitter" aria-hidden="true"></i> My Recent Tweets</h2>
+        <h2 id="tweets" class="h2-margin-top"><i class="blue-text fa fa-twitter" aria-hidden="true"></i> My Recent Tweets</h2>
         <div class="carousel carousel-slider center">
             {% for tweet in recent_tweets %}
                 <div class="carousel-item white">
-                    <p><i class="fa fa-quote-left grey-text text-lighten-1" aria-hidden="true"></i> {{ tweet['text'] }}
+                    <p class="tweet-text"><i class="fa fa-quote-left grey-text text-lighten-1" aria-hidden="true"></i> {{ tweet['text'] }}
                         <i class="fa fa-quote-right grey-text text-lighten-1" aria-hidden="true"></i></p>
                 </div>
             {% endfor %}

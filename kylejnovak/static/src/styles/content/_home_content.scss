@@ -4,23 +4,50 @@
 @import "../transitions";
 
 div.home-content {
-  h2 {
-    font-size: 2.5em;
-  }
-
-  .h2-margin-top {
-    margin-top: 50px;
-  }
-
-  .margin-top {
-    margin-top: 35px;
-  }
-
   .card {
     @include box-shadow();
   }
-  .card .card-action {
-    padding: 10px 20px 10px 20px;
+
+  @media all and (max-width: 664px) {
+    div.col.s4 {
+      width: 100%;
+    }
+    div.card-content {
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+    .h2-margin-top {
+      margin-top: 30px;
+    }
+
+    .margin-top {
+      margin-top: 25px;
+    }
+
+    .card .card-action {
+      padding: 5px 10px;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+  @media all and (min-width: 665px) {
+    .h2-margin-top {
+      margin-top: 40px;
+    }
+
+    .margin-top {
+      margin-top: 35px;
+    }
+
+    .card .card-action {
+      padding: 10px 20px;
+    }
+
+    h2 {
+      font-size: 2.5em;
+    }
   }
 
   .row.show-more {
@@ -60,7 +87,7 @@ div.home-content {
         cursor: move;
       }
 
-      p {
+      p.tweet-text {
         position: relative;
         top: 50%;
         -webkit-transform: perspective(1px) translateY(-50%);
@@ -70,14 +97,19 @@ div.home-content {
         color: $blue;
         margin: auto;
         padding: 0;
-        width: 70%;
+        width: 80%;
 
         line-height: 1em;
         font-weight: lighter;
-        font-size: 2em;
+        font-size: 1.5em;
 
         em {
           font-weight: 300;
+        }
+
+        @media all and (min-width: 665px) {
+          width: 70%;
+          font-size: 2em;
         }
       }
     }

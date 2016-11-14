@@ -5,7 +5,6 @@
 @import "mixins";
 @import "animation";
 
-
 header.page-header {
   nav {
     // Set no shadow if the viewport is 994px wide or wider.
@@ -27,6 +26,21 @@ header.page-header {
     div.nav-wrapper {
       max-width: $page-max-width;
       overflow: hidden;
+
+      strong#bigLogo {
+        display: none;
+      }
+      strong#smallLogo {
+        display: inline;
+      }
+      @media all and (min-width: 665px) {
+        strong#smallLogo {
+          display: none;
+        }
+        strong#bigLogo {
+          display: inline;
+        }
+      }
 
       ul li a {
         font-weight: bold;
