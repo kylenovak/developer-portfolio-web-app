@@ -4,6 +4,40 @@
 @import "../transitions";
 
 div.home-content {
+
+  div#welcomeSocial {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+
+    .section-title:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      border-bottom: 4px solid #dddddd;
+    }
+    
+    a {
+      color: $green;
+      padding: 5px 20px;
+      margin: 0 5px;
+      background: #FFFFFF;
+      border: 2px solid $green;
+      display: inline-block;
+
+      @include border-radius(3px);
+      @include transitions($transition-speed border-color, $transition-speed color);
+
+      &:hover {
+        color: $blue;
+        border-color: $blue;
+      }
+    }
+  }
+
   .card {
     @include box-shadow();
   }
