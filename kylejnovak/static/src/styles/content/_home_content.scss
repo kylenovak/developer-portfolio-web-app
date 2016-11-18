@@ -55,28 +55,24 @@ div.home-content {
       a.projects {
         div.card-panel {
           color: $green;
-          border: 2px solid $green;
-
-          @include transitions(color $transition-speed, background-color $transition-speed);
+          border: 2px solid white;
+          @include transitions(border $transition-speed);
         }
 
         &:hover div.card-panel {
-          color: white;
-          background-color: $green;
+          border: 2px solid $green;
         }
       }
 
       a.resume {
         div.card-panel {
           color: $blue;
-          border: 2px solid $blue;
-
-          @include transitions(color $transition-speed, background-color $transition-speed);
+          border: 2px solid white;
+          @include transitions(border $transition-speed);
         }
 
         &:hover div.card-panel {
-          color: white;
-          background-color: $blue;
+          border: 2px solid $blue;
         }
       }
     }
@@ -112,6 +108,14 @@ div.home-content {
         color: $blue;
         border-color: $blue;
       }
+    }
+  }
+
+  div.info-point {
+    @include transitions(color $transition-speed);
+
+    &:hover {
+      color: $blue;
     }
   }
 
