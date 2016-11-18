@@ -5,6 +5,83 @@
 
 div.home-content {
 
+  div.welcome {
+    width: 100%;
+    display: table;
+    padding: 0 10px;
+
+    div.main-welcome {
+      display: table-cell;
+      height: 100%;
+      float: none;
+      position: relative;
+
+      div.main-panel {
+        margin: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        p.greetings {
+          padding: 0 30px;
+        }
+        div.social {
+          border-bottom: 3px dashed #0277bd;
+          margin: 0 60px;
+          height: 58px;
+
+          i.icons {
+            color: #0277bd;
+            position: relative;
+            top: 10px;
+            background: white;
+            padding: 20px 15px;
+            border-radius: 150px;
+            border: 3px solid #0277bd;
+          }
+        }
+      }
+    }
+
+    div.side-links {
+      padding-left: 20px;
+      padding-right: 0;
+      display: table-cell;
+      height: 100%;
+      float: none;
+
+      a.projects {
+        div.card-panel {
+          color: $green;
+          border: 2px solid $green;
+
+          @include transitions(color $transition-speed, background-color $transition-speed);
+        }
+
+        &:hover div.card-panel {
+          color: white;
+          background-color: $green;
+        }
+      }
+
+      a.resume {
+        div.card-panel {
+          color: $blue;
+          border: 2px solid $blue;
+
+          @include transitions(color $transition-speed, background-color $transition-speed);
+        }
+
+        &:hover div.card-panel {
+          color: white;
+          background-color: $blue;
+        }
+      }
+    }
+  }
+
   div#welcomeSocial {
     position: absolute;
     left: 0;
@@ -19,7 +96,7 @@ div.home-content {
       width: 100%;
       border-bottom: 4px solid #dddddd;
     }
-    
+
     a {
       color: $green;
       padding: 5px 20px;

@@ -8,18 +8,17 @@
 
 {% block content %}
     <div class="home-content">
-        <div class="row" style="width:100%;display: table; padding: 0 10px;">
-            <div class="col s6" style="display: table-cell;height: 100%;float:none;position:relative">
-                <div class="card-panel center" style="margin:0;height: 100%;position:absolute;top:0;left:0;width:100%;">
+        <div class="row welcome">
+            <div class="col s6 main-welcome">
+                <div class="card-panel center main-panel">
                     <h2 class="no-margin-top center"><i class="fa fa-bell-o green-text" aria-hidden="true"></i> Welcome
                     </h2>
-                    <p class="center" style="padding: 0 30px;">Hello, I'm Kyle Novak, and welcome to my personal
+                    <p class="center greetings">Hello, I'm Kyle Novak, and welcome to my personal
                         portfolio site!
                         Thank you for taking the time to view my personal work. <a href="/contact">Contact me now</a>,
                         and we will work famously together!</p>
-                    <div style="border-bottom:3px dashed #0277bd;margin:0 60px;height:58px;">
-                        <i class="fa fa-handshake-o fa-3x center" aria-hidden="true"
-                           style="color:#0277bd;position:relative;top: 10px; background: white;padding:20px 15px; border-radius:150px; border: 3px solid #0277bd;"></i>
+                    <div class="social">
+                        <i class="fa fa-handshake-o fa-3x center icons" aria-hidden="true"></i>
                     </div>
                     <div id="welcomeSocial" class="center">
                         <a href="https://www.linkedin.com/in/KyleJosephNovak" target="_blank"><i
@@ -31,20 +30,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col s6" style="padding-left: 20px;padding-right:0;display: table-cell;height: 100%;float:none;">
+            <div class="col s6 side-links">
                 <div class="row">
-                    <a href="/projects">
-                        <div class="card-panel center green no-margin-bottom  no-margin-top">
-                            <h2 class="no-margin-top white-text">My Projects</h2>
-                            <i class="fa fa-keyboard-o fa-5x white-text" aria-hidden="true"></i>
+                    <a href="/projects" class="projects">
+                        <div class="card-panel center no-margin-bottom  no-margin-top">
+                            <h2 class="no-margin-top">My Projects</h2>
+                            <i class="fa fa-keyboard-o fa-5x" aria-hidden="true"></i>
                         </div>
                     </a>
                 </div>
                 <div class="row no-margin-bottom">
-                    <a href="/resume">
-                        <div class="card-panel center blue darken-2 no-margin-bottom">
-                            <h2 class="no-margin-top white-text">My R&eacute;sum&eacute;</h2>
-                            <i class="fa fa-folder-open-o fa-5x white-text" aria-hidden="true"></i>
+                    <a href="/resume" class="resume">
+                        <div class="card-panel center darken-2 no-margin-bottom">
+                            <h2 class="no-margin-top">My R&eacute;sum&eacute;</h2>
+                            <i class="fa fa-folder-open-o fa-5x" aria-hidden="true"></i>
                         </div>
                     </a>
                 </div>
