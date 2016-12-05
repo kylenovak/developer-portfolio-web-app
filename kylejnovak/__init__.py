@@ -1,7 +1,5 @@
 from flask import Flask
-
 from kylejnovak.database import db
-
 import os
 
 
@@ -9,7 +7,6 @@ import os
 application = app = Flask(__name__)
 
 app.config.from_object(os.environ['APP_SETTINGS'])
-
 db.init_app(app)
 
 from kylejnovak import views as view

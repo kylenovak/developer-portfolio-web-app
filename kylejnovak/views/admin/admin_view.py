@@ -10,6 +10,8 @@ admin = Admin(name='Kyle J. Novak',
               index_view=CustomAdminIndexView(),
               base_template='admin.html')
 
+admin.add_view(SecureModelView(models.Welcome, db.session))
+admin.add_view(SecureModelView(models.Bio, db.session))
 admin.add_view(ProjectModelView(models.Project, db.session))
 admin.add_view(SecureModelView(models.Resume, db.session))
 admin.add_view(SecureModelView(models.About, db.session))

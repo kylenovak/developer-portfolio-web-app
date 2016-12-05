@@ -3,11 +3,13 @@
 {% block title %}Login {{ super() }}{% endblock %}
 
 {% block content %}
-    <h1>Admin Login</h1>
-    <form id="loginForm" method="POST" action="{{ url_for('login_page.login') }}">
-        {{ login_form.csrf_token }}
-        {{ login_form.username.label }} {{ login_form.username(maxlength=255) }}
-        {{ login_form.password.label }} {{ login_form.password(maxlength=255) }}
-        <input type="submit" value="Login">
-    </form>
+    <div class="adminFormWrapper">
+        <h1 class="adminFormHeader">Admin Login</h1>
+        <form id="loginForm" method="POST" action="{{ url_for('login_page.login') }}">
+            {{ login_form.csrf_token }}
+            {{ login_form.username.label }} {{ login_form.username(maxlength=255) }}
+            {{ login_form.password.label }} {{ login_form.password(maxlength=255) }}
+            <input type="submit" value="Login">
+        </form>
+    </div>
 {% endblock %}

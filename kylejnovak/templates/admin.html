@@ -31,23 +31,19 @@
             </div>
             <div class="admin">
                 <div class="row">
-                    <div class="col-md-2">
-                        <div class="span2">
-                            <ul class="nav nav-pills nav-stacked">
-                                {{ layout.menu() }}
-                                {{ layout.menu_links() }}
-                            </ul>
-                        </div>
+                    <div class="col s2">
+                        <ul class="nav nav-pills nav-stacked">
+                            {{ layout.menu() }}
+                            {{ layout.menu_links() }}
+                        </ul>
                     </div>
-                    <div class="col-md-10">
-                        <div class="span10">
-                            <div id="content">
-                                {% block brand %}
-                                    <h2 id="brand">{{ admin_view.name | capitalize }}</h2>
-                                {% endblock %}
-                                {{ layout.messages() }}
-                                {% block body %}{% endblock %}
-                            </div>
+                    <div class="col s10">
+                        <div id="content">
+                            {% block brand %}
+                                <h2 class="brand">{{ admin_view.name | capitalize }}</h2>
+                            {% endblock %}
+                            {{ layout.messages() }}
+                            {% block body %}{% endblock %}
                         </div>
                     </div>
                 </div>

@@ -133,6 +133,10 @@ div.home-content {
     padding-bottom: 0;
   }
 
+  div.card-content {
+    padding-top: 10px;
+  }
+
   @media all and (max-width: 664px) {
     div.col.s4 {
       width: 100%;

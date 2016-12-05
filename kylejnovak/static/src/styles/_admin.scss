@@ -1,14 +1,29 @@
 // admin.scss
-
 @import 'defaults';
 @import 'colors';
 @import 'mixins';
+@import 'transitions';
+
+div.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
 div.admin-wrapper {
   width: 100%;
   height: auto;
   margin: auto;
   padding: 0 20px;
+
+  h1 {
+    font-size: 250%;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-size: 200%;
+  }
 
   div.title-wrapper {
     max-width: $page-max-width;
@@ -18,31 +33,34 @@ div.admin-wrapper {
   div.admin {
     max-width: $page-max-width;
     padding: 10px;
-    background: $secondary-color;
-    margin: 20px auto 30px auto;
+    background: #FFFFFF;
+    margin: 15px auto 30px auto;
 
     @include border-radius(5px);
     @include box-shadow();
 
     .tab-hover {
+      color: #FFFFFF;
       text-decoration: none;
-      background-color: #fff;
+      background-color: $blue;
       @include border-radius(3px);
     }
     .tab-active {
       color: #fff;
-      background-color: $primary-color;
+      background-color: $blue;
       @include border-radius(3px);
     }
 
     ul.nav.nav-pills {
       li a {
+        color: $green;
         padding: 10px;
         display: inline-block;
         width: 100%;
         margin-bottom: 5px;
         text-decoration: none;
 
+        @include transitions($transition-speed color, $transition-speed background-color);
         &:hover {
           @extend .tab-hover;
         }
@@ -55,6 +73,7 @@ div.admin-wrapper {
     ul.nav.nav-tabs {
       margin-bottom: 5px;
       border-bottom: none;
+      overflow: auto;
 
       li a {
         float: left;
@@ -78,20 +97,38 @@ div.admin-wrapper {
       @include border-radius(3px);
     }
 
-
     table.table.table-striped {
       background-color: #FFFFFF;
+      border: 2px solid #f5f5f5;
+
       @include border-radius(3px);
+
+      th {
+        background: $green-light-3;
+        color: #FFFFFF;
+        @include border-radius(0);
+
+        a {
+          color: $blue;
+        }
+      }
+      tr:nth-child(odd) {
+        background: #f5f5f5;
+      }
+      tr {
+        border-bottom: 2px solid #f5f5f5;
+      }
 
       word-break: break-all;
 
       th.span1 {
         width: 75px;
       }
+
       span.fa {
-        color: #333333;
+        color: $blue;
         &:hover {
-          color: $primary-color;
+          color: $green;
         }
       }
       form.icon button {
@@ -99,9 +136,10 @@ div.admin-wrapper {
         border: none;
 
         &:hover {
-        span.fa {
-          color: $primary-color;
-        }}
+          span.fa {
+            color: $blue;
+          }
+        }
       }
       a.icon {
         float: left;
@@ -118,9 +156,29 @@ div.admin-wrapper {
       }
     }
 
-    ul.nav.nav-tabs.actions-nav {
+    form.admin-form.form-horizontal {
+      padding: 0;
+    }
+
+    ul.nav.nav-tabs {
       li.dropdown {
         display: none;
+      }
+      li a {
+        @include border-radius(3px);
+        @include transitions($transition-speed color, $transition-speed background);
+
+        color: $green;
+        border: 2px solid $green;
+        margin-bottom: 5px;
+        &:hover {
+          background: $green;
+          color: #FFFFFF;
+        }
+      }
+      li.active a {
+        background: $green;
+        color: #FFFFFF;
       }
     }
 
