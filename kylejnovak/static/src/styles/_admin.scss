@@ -36,6 +36,31 @@ div.admin-wrapper {
     background: #FFFFFF;
     margin: 15px auto 30px auto;
 
+    div.btn-toolbar {
+      a.btn,
+      input.btn {
+        @include box-shadow(none);
+        @include transitions($transition-speed color, $transition-speed background);
+        text-transform: capitalize;
+        margin: 15px 10px 0 0;
+        float: left;
+        background: #FFFFFF;
+        color: $blue;
+        border: 2px solid $blue;
+
+        height: 42px;
+        line-height: 42px;
+
+        &:hover {
+          color: #FFFFFF;
+          background: $blue;
+        }
+      }
+      ul.dropdown-menu {
+        display: none;
+      }
+    }
+
     @include border-radius(5px);
     @include box-shadow();
 

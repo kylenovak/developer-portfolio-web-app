@@ -1,14 +1,15 @@
 // forms.scss
-
 @import 'colors';
 @import 'mixins';
 @import 'transitions';
 
-h1.adminFormHeader {
+h2.contactFormHeader,
+h2.adminFormHeader {
   font-size: 250%;
   margin-top: 10px;
 }
 
+div.contactFormWrapper,
 div.adminFormWrapper {
   margin: auto;
   overflow: auto;
@@ -16,22 +17,14 @@ div.adminFormWrapper {
   padding: 0 5px;
 }
 
-form#loginForm,
-form#registerForm {
-  background: #FFFFFF;
-
-  display: flex;
-  flex-flow: column;
-
-  max-width: 500px;
-  box-sizing: border-box;
-
-  padding: 10px 20px;
-  margin: 20px 0;
-
-  @include box-shadow();
+#loginForm ul,
+#contactForm ul {
+  margin-top: 0;
+  padding: 10px;
   @include border-radius(5px);
+}
 
+.form-inputs {
   .form-fix {
     float: left;
     clear: both;
@@ -48,7 +41,9 @@ form#registerForm {
     margin-bottom: 5px;
   }
 
+  textarea,
   input[type="text"],
+  input[type="email"],
   input[type="password"] {
     @extend .form-fix;
     @include transitions(border-color $transition-speed);
@@ -63,6 +58,67 @@ form#registerForm {
       @include box-shadow(none);
     }
   }
+
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+}
+
+form.admin-form.form-horizontal {
+  @extend .form-inputs;
+
+  div#cke_content {
+    float: left;
+    width: 100%;
+    clear: both;
+  }
+
+  label {
+    color: $blue;
+  }
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    a.btn,
+    input.btn {
+      @include box-shadow(none);
+      @include transitions($transition-speed color, $transition-speed background);
+      text-transform: capitalize;
+      margin: 15px 5px 0 0;
+      background: #FFFFFF;
+      color: $blue;
+      border: 2px solid $blue;
+
+      &:hover {
+        color: #FFFFFF;
+        background: $blue;
+      }
+    }
+  }
+}
+
+form#contactForm,
+form#loginForm,
+form#registerForm {
+  background: #FFFFFF;
+
+  display: flex;
+  flex-flow: column;
+
+  max-width: 500px;
+  box-sizing: border-box;
+
+  padding: 10px 20px;
+  margin: 20px 0;
+
+  @include box-shadow();
+  @include border-radius(5px);
+
+  @extend .form-inputs;
 
   input[type="submit"] {
     @extend .form-fix;

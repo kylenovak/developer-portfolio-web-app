@@ -3,9 +3,7 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5>Personal Bio</h5>
-                <p>Hello, my name is Kyle Novak. I'm an enterprising individual, a web developer, a software
-                    developer, a creative type, a problem solver, a writer and blogger, and much more. Thank you
-                    for visiting my personal portfolio site. Connect with me and we will do great things in business!</p>
+                <div>{{ g.get('bio_content') }}</div>
             </div>
             <div id="footer-browse-nav" class="col l3 s12">
                 <h5>Browse</h5>
@@ -16,9 +14,12 @@
             <div class="col l3 s12">
                 <h5>Connect</h5>
                 <ul class="footer-social-icons">
-                    <li><a href="https://www.linkedin.com/in/KyleJosephNovak" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a></li>
-                    <li><a href="https://www.twitter.com/KyleJosephNovak" target="_blank"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a></li>
-                    <li><a href="https://github.com/kylenovak" target="_blank"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/KyleJosephNovak" target="_blank"><i
+                            class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.twitter.com/KyleJosephNovak" target="_blank"><i
+                            class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a></li>
+                    <li><a href="https://github.com/kylenovak" target="_blank"><i class="fa fa-github-square fa-3x"
+                                                                                  aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -26,9 +27,9 @@
     <div class="footer-copyright">
         <div class="container">
             {{ g.get('copyright_text') }} |
-             {% if current_user.is_authenticated and current_user.user_role == 'A'  %}
+            {% if current_user.is_authenticated and current_user.user_role == 'A' %}
                 <a href="{{ url_for('admin.index') }}">Admin</a> |
-                 <a href="{{ url_for('login_page.logout') }}">Logout</a>
+                <a href="{{ url_for('login_page.logout') }}">Logout</a>
             {% else %}
                 <a href="{{ url_for('login_page.login') }}">Admin Login</a>
             {% endif %}

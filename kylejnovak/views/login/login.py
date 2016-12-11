@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, flash, url_for, request
+from flask import Blueprint, render_template, redirect, flash, url_for, request, g
 from flask_login import login_user, login_required, logout_user, current_user
 
 from kylejnovak.forms.login import LoginForm
@@ -14,18 +14,20 @@ def login():
     if request.method == 'POST':
         app.logger.info('Attempting to login as: {}'.format(login_form.username))
 
-    if login_form.validate_on_submit():
-        # Tell Flask-Login that user has been authenticated.
-        login_user(login_form.user)
+        if login_form.validate_on_submit():
+            # Tell Flask-Login that user has been authenticated.
+            login_user(login_form.user)
 
-        flash('User logged in successfully.')
-        app.logger.info('Logged in as user: {}'.format(login_form.user))
+            flash('User logged in successfully.')
+            app.logger.info('Logged in as user: {}'.format(login_form.user))
 
-        return redirect(url_for('admin.index'))
+            return redirect(url_for('admin.index'))
+        else:
+            # Login failed, show login template.
+            flash('Login attempt failed.')
+            app.logger.warning('Login attempt failed for: {}'.format(login_form.username))
+            g.login_form_errors = True
 
-    # Login failed, show login template.
-    if request.method == 'POST':
-        app.logger.warning('Login attempt failed for: {}'.format(login_form.username))
     return render_template('login.html', login_form=login_form)
 
 

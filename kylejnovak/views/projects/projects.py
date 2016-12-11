@@ -1,29 +1,24 @@
 from flask import Blueprint, render_template
-from kylejnovak.database import db
 
-from kylejnovak.models.project import Project
+from kylejnovak.views.projects.services.projects_service import ProjectsService
 
-from sqlalchemy.orm.exc import NoResultFound
+projects_service = ProjectsService()
 
 projects_page = Blueprint('projects_page', __name__, template_folder='templates')
 
 
 @projects_page.route('/projects')
 def projects_home():
-    projects = db.session.query(Project)\
-        .order_by(Project.create_date.desc()).all()
+    projects = projects_service.get_all_projects()
     return render_template('projects.html', projects=projects)
 
 
 @projects_page.route('/projects/<url_slug>')
 def project_view(url_slug):
-    try:
-        project = db.session.query(Project)\
-            .filter(Project.url_slug == url_slug).one()
-    except NoResultFound:
-        return render_template('page_not_found.html'), 404
+    projects = projects_service.get_all_projects()
 
-    projects = db.session.query(Project)\
-        .order_by(Project.create_date.desc()).all()
+    project = projects_service.get_project_by_url_slug(url_slug)
+    if project is None:
+        return render_template('page_not_found.html', projects=projects), 404
 
     return render_template('project_view.html', project=project, projects=projects)

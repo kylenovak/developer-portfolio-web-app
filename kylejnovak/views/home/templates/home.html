@@ -13,10 +13,7 @@
                 <div class="card-panel center main-panel">
                     <h2 class="no-margin-top center"><i class="fa fa-bell-o green-text" aria-hidden="true"></i> Welcome
                     </h2>
-                    <p class="center greetings">Hello, I'm Kyle Novak, and welcome to my personal
-                        portfolio site!
-                        Thank you for taking the time to view my personal work. <a href="/contact">Contact me now</a>,
-                        and we will work famously together!</p>
+                    <div class="center greetings">{{ welcome_text }}</div>
                     <div class="social">
                         <i class="fa fa-handshake-o fa-3x center icons" aria-hidden="true"></i>
                     </div>
@@ -89,7 +86,7 @@
                             <a href="{{ repo['html_url'] }}" class="card-text" target="_blank">
                                 <span class="card-title">{{ repo['name'] }}</span>
                             </a>
-                            <p class="text-wrap">{{ repo['description'] }}</p>
+                            <p class="repo-text text-wrap">{{ repo['description'] }}</p>
                         </div>
                     </div>
                     <div class="card-action">

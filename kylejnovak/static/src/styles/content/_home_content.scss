@@ -24,22 +24,33 @@ div.home-content {
         left: 0;
         width: 100%;
 
-        p.greetings {
+        div.greetings {
+          margin: 15px 0;
           padding: 0 30px;
-        }
-        div.social {
-          border-bottom: 3px dashed #0277bd;
-          margin: 0 60px;
-          height: 58px;
 
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .social:before {
+          content: "";
+          position: absolute;
+          top: 57.5%;
+          left: 12.5%;
+          width: 75%;
+          border-bottom: 3px dashed $blue;
+        }
+
+        div.social {
           i.icons {
-            color: #0277bd;
+            color: $blue;
             position: relative;
             top: 10px;
             background: white;
             padding: 20px 15px;
             border-radius: 150px;
-            border: 3px solid #0277bd;
+            border: 3px solid $blue;
           }
         }
       }
@@ -84,15 +95,6 @@ div.home-content {
     bottom: 20px;
     width: 100%;
 
-    .section-title:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      border-bottom: 4px solid #dddddd;
-    }
-
     a {
       color: $green;
       padding: 5px 20px;
@@ -134,7 +136,7 @@ div.home-content {
   }
 
   div.card-content {
-    padding-top: 10px;
+    padding-top: 15px;
   }
 
   @media all and (max-width: 664px) {
@@ -193,12 +195,17 @@ div.home-content {
     color: #FFFFFF;
     background-color: $green-light;
     padding: 3px;
+
     @include border-radius(3px);
     @include transitions($transition-speed background-color);
   }
 
   a.card-text:hover {
     background-color: $green;
+  }
+
+  p.repo-text {
+    margin-top: 5px;
   }
 
   .hidden {

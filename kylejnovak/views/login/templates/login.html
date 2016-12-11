@@ -4,12 +4,28 @@
 
 {% block content %}
     <div class="adminFormWrapper">
-        <h1 class="adminFormHeader">Admin Login</h1>
         <form id="loginForm" method="POST" action="{{ url_for('login_page.login') }}">
+            <h2 class="adminFormHeader">Admin Login</h2>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="messages {% if g.get('login_form_errors') %}red{% endif %} white-text">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
             {{ login_form.csrf_token }}
-            {{ login_form.username.label }} {{ login_form.username(maxlength=255) }}
-            {{ login_form.password.label }} {{ login_form.password(maxlength=255) }}
-            <input type="submit" value="Login">
+
+            {{ login_form.username.label }}
+            {{ login_form.username(maxlength=30) }}
+
+            {{ login_form.password.label }}
+            {{ login_form.password(maxlength=100) }}
+
+            {{ login_form.submit }}
         </form>
     </div>
 {% endblock %}
