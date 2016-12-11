@@ -25,16 +25,45 @@
             {{ contact_form.csrf_token }}
 
             {{ contact_form.name.label }}
-            {{ contact_form.name(maxlength=60) }}
+            {% for message in contact_form.name.errors %}
+                <div class="red-text">{{ message }}</div>
+            {% endfor %}
+            <span class="{% if contact_form.name.errors %}errors{% endif %}">
+                {{ contact_form.name(maxlength=60) }}
+            </span>
 
             {{ contact_form.email.label }}
-            {{ contact_form.email(maxlength=255) }}
+            {% for message in contact_form.email.errors %}
+                <div class="red-text">{{ message }}</div>
+            {% endfor %}
+            <span class="{% if contact_form.email.errors %}errors{% endif %}">
+                {{ contact_form.email(maxlength=255) }}
+            </span>
 
             {{ contact_form.subject.label }}
-            {{ contact_form.subject(maxlength=100) }}
+            {% for message in contact_form.subject.errors %}
+                <div class="red-text">{{ message }}</div>
+            {% endfor %}
+            <span class="{% if contact_form.subject.errors %}errors{% endif %}">
+                {{ contact_form.subject(maxlength=100) }}
+            </span>
 
             {{ contact_form.message.label }}
-            {{ contact_form.message(maxlength=1000) }}
+            {% for message in contact_form.message.errors %}
+                <div class="red-text">{{ message }}</div>
+            {% endfor %}
+            <span class="{% if contact_form.message.errors %}errors{% endif %}">
+                {{ contact_form.message(maxlength=1000) }}
+            </span>
+
+            <div id="socialContact" class="center">
+                <a href="https://www.linkedin.com/in/KyleJosephNovak" target="_blank"><i
+                        class="fa fa-linkedin fa-3x center" aria-hidden="true"></i></a>
+                <a href="https://www.twitter.com/KyleJosephNovak" target="_blank">
+                    <i class="fa fa-twitter fa-3x center" aria-hidden="true"></i></a>
+                <a href="https://github.com/kylenovak" target="_blank"><i class="fa fa-github-alt fa-3x center"
+                                                                          aria-hidden="true"></i></a>
+            </div>
 
             {{ contact_form.submit }}
         </form>

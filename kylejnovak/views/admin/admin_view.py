@@ -15,7 +15,6 @@ admin.add_view(SecureModelView(models.Bio, db.session))
 admin.add_view(ProjectModelView(models.Project, db.session))
 admin.add_view(SecureModelView(models.Resume, db.session))
 admin.add_view(SecureModelView(models.About, db.session))
-admin.add_view(SecureModelView(models.Contact, db.session))
 
 admin.add_view(CustomFileAdmin(base_path='./kylejnovak/static/uploads',
                                base_url='/static/uploads/',

@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, ValidationError
-from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
 from kylejnovak.models.user import User
+from kylejnovak import app
 
 
 class LoginForm(FlaskForm):
@@ -14,14 +14,12 @@ class LoginForm(FlaskForm):
     user = None
 
     def validate_password(self, field):
-        try:
-            user = User.query.filter(User.username == self.username.data).one()
-        except (MultipleResultsFound, NoResultFound):
-            raise ValidationError('Invalid user')
+        user = User.query.filter(User.username == self.username.data).first()
 
         if user is None:
-            raise ValidationError('Invalid user')
+            app.logger.error('User not found for username: {}'.format(self.username.data))
+            raise ValidationError()
         if not user.check_password(self.password.data):
-            raise ValidationError('Invalid password')
+            raise ValidationError()
 
         self.user = user

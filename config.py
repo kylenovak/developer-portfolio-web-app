@@ -16,6 +16,13 @@ class Config(object):
     TWITTER_ACCESS_TOKEN = '792891903016513536-qv5rVowHWx2L5AtQBzdbwckgH5YwJDt'
     TWITTER_ACCESS_SECRET = 'kFrVabKmVd2o4796IwdVlpY0jY3OqPudFrCiTicM8UoC8'
 
+    MAIL_SERVER = "smtp.gmail.com"
+    MAIL_PORT = 465
+    MAIL_USE_TLS = True
+    MAIL_USE_SSL = False
+    MAIL_USERNAME = '120758776590-if209ahnb4h5fo5n4os5j9ictelgg59m.apps.googleusercontent.com'
+    MAIL_PASSWORD = 'd9u-jpBQpFxCiPwiBGv2WNkU'
+
     GITHUB_USERNAME = 'kylenovak'
     GITHUB_API_TOKEN = 'e26ed3487b1fe28b2722abc8d431bc50a4627ea5'
 

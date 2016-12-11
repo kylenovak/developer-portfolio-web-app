@@ -1,5 +1,8 @@
 from flask import Flask
+from flask_mail import Mail
+
 from kylejnovak.database import db
+
 import os
 
 
@@ -8,6 +11,10 @@ application = app = Flask(__name__)
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 db.init_app(app)
+
+# setup flask mail
+mail = Mail()
+mail.init_app(app)
 
 from kylejnovak import views as view
 from kylejnovak.views.admin.admin_view import admin
