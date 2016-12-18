@@ -5,6 +5,7 @@ import Hello from './components/hello';
 
 require('./styles/main.scss');
 
+/*
 const root = document.getElementById('app');
 
 class Main extends React.Component<any, any> {
@@ -19,4 +20,4 @@ class Main extends React.Component<any, any> {
     }
 }
 
-ReactDOM.render(<Main />, root);
+ReactDOM.render(<Main />, root);*/
