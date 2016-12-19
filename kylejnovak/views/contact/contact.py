@@ -30,7 +30,7 @@ def contact():
             try:
                 mail.send(msg)
             except SMTPAuthenticationError | Exception as e:
-                app.logger.error('Error sending email for: {}\n{}'.format(contact_form.email.data, e))
+                app.logger.error('Error sending email for: {}\n{}'.format(contact_form.email.data, str(e)))
                 flash('Email not sent. Internal server issue.')
                 g.contact_form_errors = True
                 return render_template('contact.html', contact_form=contact_form)
