@@ -16,7 +16,7 @@ def contact():
 
         if contact_form.validate_on_submit():
             msg = Message(contact_form.subject.data,
-                          sender=app.config['MAIL_USERNAME'],
+                          sender=contact_form.name.data,
                           recipients=[app.config['MAIL_USERNAME']])
             msg.body = """
                   From: %s <%s>
