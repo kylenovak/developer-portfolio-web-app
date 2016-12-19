@@ -21,7 +21,7 @@ class Config(object):
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True
     MAIL_USERNAME = 'kyle@novak.codes'
-    MAIL_PASSWORD = 'rditewhwplviesof'
+    MAIL_PASSWORD = 'rditewhwplvieso'
 
     GITHUB_USERNAME = 'kylenovak'
     GITHUB_API_TOKEN = 'e26ed3487b1fe28b2722abc8d431bc50a4627ea5'

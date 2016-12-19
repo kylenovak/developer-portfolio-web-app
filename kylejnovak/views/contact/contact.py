@@ -15,7 +15,9 @@ def contact():
         app.logger.info('Attempting to send email for: {}'.format(contact_form.email))
 
         if contact_form.validate_on_submit():
-            msg = Message(contact_form.subject.data,
+            subject_heading = 'www.kylejnovak.com: '
+
+            msg = Message(subject_heading + contact_form.subject.data,
                           sender=contact_form.email.data,
                           recipients=[app.config['MAIL_USERNAME']])
             msg.body = """
