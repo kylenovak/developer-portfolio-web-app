@@ -4,6 +4,8 @@ from flask_mail import Message
 from kylejnovak.forms.contact import ContactForm
 from kylejnovak import app, mail
 
+from smtplib import SMTPAuthenticationError
+
 contact_page = Blueprint('contact_page', __name__, template_folder='templates')
 
 
@@ -12,7 +14,7 @@ def contact():
     contact_form = ContactForm()
 
     if request.method == 'POST':
-        app.logger.info('Attempting to send email for: {}'.format(contact_form.email))
+        app.logger.info('Attempting to send email for: {}'.format(contact_form.email.data))
 
         if contact_form.validate_on_submit():
             subject_heading = 'www.kylejnovak.com: '
@@ -25,10 +27,16 @@ def contact():
                   %s
                   """ % (contact_form.name.data, contact_form.email.data, contact_form.message.data)
 
-            mail.send(msg)
+            try:
+                mail.send(msg)
+            except SMTPAuthenticationError:
+                app.logger.error('Error sending email for: {}'.format(contact_form.email.data))
+                flash('Email not sent. Internal server issue.')
+                g.contact_form_errors = True
+                return render_template('contact.html', contact_form=contact_form)
 
             flash('Your email was sent.')
-            app.logger.info('Email was sent for: {}'.format(contact_form.email))
+            app.logger.info('Email was sent for: {}'.format(contact_form.email.data))
         else:
             flash('Contact form has errors. Fix them before continuing.')
             g.contact_form_errors = True
