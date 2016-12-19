@@ -194,7 +194,7 @@ div.home-content {
     font-size: 1.5em;
     color: #FFFFFF;
     background-color: $green-light;
-    padding: 3px;
+    padding: 3px 8px;
 
     @include border-radius(3px);
     @include transitions($transition-speed background-color);
