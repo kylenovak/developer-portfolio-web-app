@@ -29,14 +29,19 @@ def contact():
 
             try:
                 mail.send(msg)
-            except SMTPAuthenticationError | Exception as e:
-                app.logger.error('Error sending email for: {}\n{}'.format(contact_form.email.data, str(e)))
+            except SMTPAuthenticationError as e:
+                app.logger.error('Error sending email for: {0}\n{1}'.format(contact_form.email.data, e))
                 flash('Email not sent. Internal server issue.')
                 g.contact_form_errors = True
                 return render_template('contact.html', contact_form=contact_form)
-
-            flash('Your email was sent.')
-            app.logger.info('Email was sent for: {}'.format(contact_form.email.data))
+            except Exception as e:
+                app.logger.error('Something unexpected happened while '
+                                 'trying to send an email for: {0}\n{1!s}'.format(contact_form.email.data, e))
+                g.contact_form_errors = True
+                return render_template('contact.html', contact_form=contact_form)
+            else:
+                flash('Your email was sent!')
+                app.logger.info('Email was sent for: {}'.format(contact_form.email.data))
         else:
             flash('Contact form has errors. Fix them before continuing.')
             g.contact_form_errors = True
