@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 
-{% block title %}Page Not Found (404 error)! {{ super() }}{% endblock %}
+{% block title %}Internal server issue (500 error)! {{ super() }}{% endblock %}
 
 {% block breadcrumbs %}
     <a href="/" class="breadcrumb"><span class="breadcrumb-text">Home</span></a>
-    <a href="#" class="breadcrumb"><span class="breadcrumb-text active">Page not found</span></a>
+    <a href="#" class="breadcrumb"><span class="breadcrumb-text active">Internal server issue</span></a>
 {% endblock %}
 
 {% block content %}
@@ -13,8 +13,8 @@
         <div class="main-content col s10">
             <div class="card-panel">
                 <h2 class="no-margin-top red-text"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-Page Not Found (404 error)</h2>
-                <div>The page you were searching for does not exist. Visit the <a href="/" class="inline-link">home page</a> to start anew.</div>
+Internal Server Issue (500 error)</h2>
+                <div>There was an internal server issue. If the issue persists, please <a href="/contact" class="inline-link">contact the site admin</a>.
             </div>
         </div>
         <div class="col s1"></div>

@@ -23,6 +23,10 @@ div.page-content-wrapper {
     margin: 15px auto;
     padding: 0;
 
+    a.inline-link:hover {
+      text-decoration: underline;
+    }
+
     div.main-content h2 {
       font-size: 2.28rem;
       margin-top: 0;
