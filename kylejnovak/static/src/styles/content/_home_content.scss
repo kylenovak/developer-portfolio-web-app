@@ -36,7 +36,7 @@ div.home-content {
         .social:before {
           content: "";
           position: absolute;
-          top: 57.5%;
+          top: 57.25%;
           left: 12.5%;
           width: 75%;
           border-bottom: 3px dashed $blue;
@@ -139,6 +139,12 @@ div.home-content {
     padding-top: 12.5px;
   }
 
+  @media all and (max-width: 1199px) {
+    div.social {
+      display: none;
+    }
+  }
+
   @media all and (max-width: 850px) {
     div.col.s4 {
       width: 100%;
@@ -181,9 +187,6 @@ div.home-content {
           div.greetings {
             margin: 15px 0 90px 0;
             padding: 0 30px;
-          }
-          div.social {
-            display: none;
           }
         }
       }

@@ -17,6 +17,11 @@ div#socialContact {
     border: 2px solid $green;
     display: inline-block;
 
+    @media all and (max-width: 500px) {
+      padding: 5%;
+      font-size: 50%;
+    }
+
     @include border-radius(3px);
     @include transitions($transition-speed border-color, $transition-speed color);
 

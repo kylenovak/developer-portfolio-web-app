@@ -10,7 +10,7 @@
 {% block content %}
     <div class="contactFormWrapper">
         <form id="contactForm" method="POST" action="{{ url_for('contact_page.contact') }}">
-            <h2 class="contactFormHeader">Contact Me</h2>
+            <h2 class="contactFormHeader"><i class="fa fa-envelope-o green-text" aria-hidden="true"></i> Contact Me</h2>
 
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
