@@ -7,7 +7,6 @@ class Project(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False, unique=True)
-    subtitle = db.Column(db.String(255), nullable=False)
     url_slug = db.Column(db.String(255), nullable=False, unique=True)
     content = db.Column(db.Text, nullable=False)
     create_date = db.Column(db.DateTime, default=datetime.utcnow(), nullable=False)

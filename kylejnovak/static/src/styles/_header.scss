@@ -150,13 +150,13 @@ header.page-header {
         @include transitions($transition-speed background, $transition-speed color);
 
         margin: 0;
-        background: $green;
-        color: #FFFFFF;
+        background: #FFFFFF;
+        color: $blue;
         padding: 0 20px;
 
         &:hover {
-          background: $blue;
-          color: #FFFFFF;
+          color: $green;
+          background: #e0e0e0;
         }
       }
     }

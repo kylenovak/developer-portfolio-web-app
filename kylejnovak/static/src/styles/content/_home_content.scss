@@ -136,10 +136,10 @@ div.home-content {
   }
 
   div.card-content {
-    padding-top: 15px;
+    padding-top: 12.5px;
   }
 
-  @media all and (max-width: 664px) {
+  @media all and (max-width: 850px) {
     div.col.s4 {
       width: 100%;
     }
@@ -147,6 +147,50 @@ div.home-content {
       padding-top: 5px;
       padding-bottom: 10px;
     }
+
+    div.welcome {
+      width: 100%;
+      display: block;
+      padding: 5px;
+      float: left;
+
+      div.main-welcome,
+      div.side-links {
+        display: block;
+        width: 100%;
+        float: left;
+        padding: 5px;
+        height: auto;
+        position: relative;
+      }
+
+      div.side-links div {
+        display: block;
+        width: 100%;
+        float: left;
+        position: relative;
+      }
+      div.main-welcome {
+        div.main-panel {
+          margin: 0 0 35px 0;
+          width: 100%;
+          position: relative;
+          width: 100%;
+          display: block;
+
+          div.greetings {
+            margin: 15px 0 90px 0;
+            padding: 0 30px;
+          }
+          div.social {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 764px) {
     .h2-margin-top {
       margin-top: 30px;
     }
@@ -163,7 +207,7 @@ div.home-content {
       font-size: 2em;
     }
   }
-  @media all and (min-width: 665px) {
+  @media all and (min-width: 765px) {
     .h2-margin-top {
       margin-top: 40px;
     }
@@ -243,7 +287,7 @@ div.home-content {
           font-weight: 300;
         }
 
-        @media all and (min-width: 665px) {
+        @media all and (min-width: 765px) {
           width: 70%;
           font-size: 2em;
         }

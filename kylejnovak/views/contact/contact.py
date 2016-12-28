@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, g
+from flask import Blueprint, render_template, redirect, url_for, request, flash, g
 from flask_mail import Message
 
 from kylejnovak.forms.contact import ContactForm
@@ -17,15 +17,15 @@ def contact():
         app.logger.info('Attempting to send email for: {}'.format(contact_form.email.data))
 
         if contact_form.validate_on_submit():
-            subject_heading = 'www.kylejnovak.com: '
+            subject_heading = 'kylejnovak.com: '
 
             msg = Message(subject_heading + contact_form.subject.data,
-                          sender=contact_form.email.data,
+                          sender=app.config['MAIL_USERNAME'],
                           recipients=[app.config['MAIL_USERNAME']])
-            msg.body = """
-                  From: %s <%s>
-                  %s
-                  """ % (contact_form.name.data, contact_form.email.data, contact_form.message.data)
+
+            msg.body = 'From: {0!s} <{1!s}>\n{2!s}'.format(contact_form.name.data,
+                                                           contact_form.email.data,
+                                                           contact_form.message.data)
 
             try:
                 mail.send(msg)
@@ -42,6 +42,7 @@ def contact():
             else:
                 flash('Your email was sent!')
                 app.logger.info('Email was sent for: {}'.format(contact_form.email.data))
+                return redirect(url_for('contact_page.contact'))
         else:
             flash('Contact form has errors. Fix them before continuing.')
             g.contact_form_errors = True
