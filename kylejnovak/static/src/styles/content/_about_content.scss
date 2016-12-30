@@ -1,0 +1,18 @@
+// about_content.scss
+
+div.aboutContent {
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media all and (max-width: 993px) {
+    div.col.s1 {
+      display: none;
+    }
+
+    div.main-content.col.s10 {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}

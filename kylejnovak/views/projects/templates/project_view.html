@@ -9,11 +9,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row">
+    <div class="row projectContent">
         <div class="main-content col s8">
             <div class="card-panel">
                 {% if project %}
-                    {{ project.content }}
+                    {{ project.content | safe }}
                 {% endif %}
             </div>
         </div>

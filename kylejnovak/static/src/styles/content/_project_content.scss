@@ -1,0 +1,11 @@
+// project_content.scss
+
+div.projectContent {
+  @media all and (max-width: 993px) {
+    div.side-content.col.s4,
+    div.main-content.col.s8 {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}

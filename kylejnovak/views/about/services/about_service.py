@@ -9,4 +9,4 @@ class AboutService(object):
         self.about = About
 
     def get_about(self):
-        return self.query(self.about.content).first()
+        return self.query(self.about).first()
