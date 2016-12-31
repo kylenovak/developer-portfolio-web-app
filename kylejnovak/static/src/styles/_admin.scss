@@ -149,6 +149,11 @@ div.admin-wrapper {
       th.span1 {
         width: 75px;
       }
+      th.col-title,
+      th.col-url_slug,
+      th.col-is_complete {
+        width: 125px;
+      }
 
       span.fa {
         color: $blue;

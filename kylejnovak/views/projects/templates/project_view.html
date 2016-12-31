@@ -13,6 +13,20 @@
         <div class="main-content col s8">
             <div class="card-panel">
                 {% if project %}
+                    <h1>{{ project.title }}</h1>
+                    {% if project.is_complete == 'y' %}
+                        <p class="badgeWrapper">
+                            <span class="new badge left green" data-badge-caption="Project Completed"><i class="fa fa-check-square-o"
+                                                                                              aria-hidden="true"></i>
+                            </span>
+                        </p>
+                    {% else %}
+                        <p class="badgeWrapper">
+                            <span class="new badge left blue darken-1" data-badge-caption="Project Uncompleted"><i class="fa fa-square-o" aria-hidden="true"></i>
+
+                            </span>
+                        </p>
+                    {% endif %}
                     {{ project.content | safe }}
                 {% endif %}
             </div>
@@ -20,9 +34,12 @@
         <div class="side-content col s4">
             <div class="card-panel">
                 <ul class="collection with-header">
-                    <li class="collection-header"><h4><i class="fa fa-keyboard-o green-text" aria-hidden="true"></i> Projects</h4></li>
+                    <li class="collection-header"><h4><i class="fa fa-keyboard-o green-text" aria-hidden="true"></i>
+                        Projects</h4></li>
                     {% for proj in projects %}
-                        <li><a href="/projects/{{ proj.url_slug }}" class="collection-item {% if project.title == proj.title %}active{% endif %}">{{ proj.title }}</a></li>
+                        <li><a href="/projects/{{ proj.url_slug }}"
+                               class="collection-item {% if project.title == proj.title %}active{% endif %}">{{ proj.title }}</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
