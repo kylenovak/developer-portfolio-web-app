@@ -1,5 +1,9 @@
 // project_content.scss
 
+div.projectContent.view a:hover {
+  text-decoration: underline;
+}
+
 div.projectContent {
   @media all and (max-width: 993px) {
     div.side-content.col.s4,
