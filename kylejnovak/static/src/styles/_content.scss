@@ -5,6 +5,7 @@
 @import "content/about_content";
 @import "content/resume_content";
 @import "content/contact_content";
+@import "content/misc_content";
 
 @import "defaults";
 @import "colors";
@@ -25,10 +26,6 @@ div.page-content-wrapper {
 
     margin: 15px auto;
     padding: 0;
-
-    a.inline-link:hover {
-      text-decoration: underline;
-    }
 
     div.main-content h2 {
       font-size: 2.28rem;
