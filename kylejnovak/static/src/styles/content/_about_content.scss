@@ -5,6 +5,10 @@ div.aboutContent {
     text-decoration: underline;
   }
 
+  div.main-content h2 {
+    margin-top: 0;
+  }
+
   @media all and (max-width: 993px) {
     div.col.s1 {
       display: none;
