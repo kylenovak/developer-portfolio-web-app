@@ -1,0 +1,9 @@
+// images.scss
+
+img {
+  opacity: 1;
+  width: auto !important; /*override the width below*/
+  width: 100%;
+  height: auto !important;
+  max-width: 100%;
+}

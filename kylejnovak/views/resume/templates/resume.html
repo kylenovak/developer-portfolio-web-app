@@ -25,7 +25,7 @@
                     {% endfor %}
                 </ul>
 
-                <h2>Technical Skills</h2>
+                <h2>Languages / Technologies</h2>
                 <p class="badgeWrapper">
                     {% for skill in resume_content.get('skills') %}
                         <span class="new badge left blue darken-2" data-badge-caption="{{ skill }}"></span>
@@ -33,18 +33,18 @@
                 </p>
 
                 <h2>Professional Experience</h2>
-                <p>
+                <ul>
                     {% for experience in resume_content.get('experience') %}
-                        {{ experience.get('employer') }} | {{ experience.get('title') }}
+                        <li>{{ experience.get('employer') }} | {{ experience.get('title') }}</li>
                     {% endfor %}
-                </p>
+                </ul>
 
                 <h2>Education</h2>
-                <p>
+                <ul>
                     {% for education in resume_content.get('education') %}
-                        {{ education.get('school') }} | {{ education.get('major') }} | {{ education.get('minor') }}
+                        <li>{{ education.get('school') }} | {{ education.get('major') }} | {{ education.get('minor') }}</li>
                     {% endfor %}
-                </p>
+                </ul>
 
                 <h2>Interests / Hobbies</h2>
                 <p class="badgeWrapper">
