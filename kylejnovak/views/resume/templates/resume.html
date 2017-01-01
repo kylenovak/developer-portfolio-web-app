@@ -16,7 +16,7 @@
                 </h1>
                 <strong>R&eacute;sum&eacute; link:</strong> <a href="/static/uploads/kylenovak_resume.pdf"
                                                                target="_blank">kylenovak_resume.pdf</a>
-                <p>{{ resume_content.get('overview') }}</p>
+                <p>{{ resume_content.get('overview') | safe }}</p>
 
                 <h2>Side Projects</h2>
                 <ul>
