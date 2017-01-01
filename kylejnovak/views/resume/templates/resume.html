@@ -12,8 +12,46 @@
         <div class="col s1"></div>
         <div class="main-content col s10">
             <div class="card-panel">
-                <h2 class="no-margin-top"><i class="fa fa-folder-open-o green-text" aria-hidden="true"></i> My R&eacute;sum&eacute;</h2>
-                <div>{{ resume_content }}</div>
+                <h1><i class="fa fa-folder-open-o green-text" aria-hidden="true"></i> My R&eacute;sum&eacute;
+                </h1>
+                <strong>R&eacute;sum&eacute; link:</strong> <a href="/static/uploads/kylenovak_resume.pdf"
+                                                               target="_blank">kylenovak_resume.pdf</a>
+                <p>{{ resume_content.get('overview') }}</p>
+
+                <h2>Side Projects</h2>
+                <ul>
+                    {% for project in resume_content.get('projects') %}
+                        <li><a href="{{ project.get('url') }}" target="_blank">{{ project.get('title') }}</a></li>
+                    {% endfor %}
+                </ul>
+
+                <h2>Technical Skills</h2>
+                <p class="badgeWrapper">
+                    {% for skill in resume_content.get('skills') %}
+                        <span class="new badge left blue darken-2" data-badge-caption="{{ skill }}"></span>
+                    {% endfor %}
+                </p>
+
+                <h2>Professional Experience</h2>
+                <p>
+                    {% for experience in resume_content.get('experience') %}
+                        {{ experience.get('employer') }} | {{ experience.get('title') }}
+                    {% endfor %}
+                </p>
+
+                <h2>Education</h2>
+                <p>
+                    {% for education in resume_content.get('education') %}
+                        {{ education.get('school') }} | {{ education.get('major') }} | {{ education.get('minor') }}
+                    {% endfor %}
+                </p>
+
+                <h2>Interests / Hobbies</h2>
+                <p class="badgeWrapper">
+                    {% for interest in resume_content.get('interests') %}
+                        <span class="new badge left green" data-badge-caption="{{ interest }}"></span>
+                    {% endfor %}
+                </p>
             </div>
         </div>
         <div class="col s1"></div>
