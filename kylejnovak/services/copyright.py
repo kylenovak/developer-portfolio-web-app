@@ -1,3 +1,4 @@
+from flask import Markup
 from datetime import date
 
 
@@ -8,8 +9,8 @@ def get_copyright_text(app):
     copyright_text = 'Copyright &copy; {:d}'.format(year_app_built)
 
     if current_year > year_app_built:
-        copyright_text += '- {:d}'.format(current_year)
-    else:
-        copyright_text += ', {}'.format(app.config['AUTHOR'])
+        copyright_text += ' - {:d}'.format(current_year)
 
-    return copyright_text
+    copyright_text += ' {}'.format(app.config['AUTHOR'])
+
+    return Markup(copyright_text)
