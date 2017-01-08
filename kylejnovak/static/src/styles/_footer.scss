@@ -13,15 +13,22 @@ footer.page-footer {
     max-width: $page-max-width;
     padding: 0;
 
-    @media all and (min-width: 1200px) {
+    @media all and (min-width: 1065px) {
       width: 100%;
+    }
+    @media all and (max-width: 1064px) {
+      width: 90%;
     }
 
     h5 {
       color: $green;
     }
 
-    div.col {
+
+    div.col.l6 div p {
+      padding-right: 30px;
+    }
+    div#footer-browse-nav {
       padding-right: 30px;
     }
     div.col:last-child {
