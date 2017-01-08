@@ -140,12 +140,33 @@ div.home-content {
   }
 
   @media all and (max-width: 1199px) {
-    div.social {
-      display: none;
+    div.welcome {
+      div.main-welcome {
+        div.main-panel {
+
+          div.social:before {
+            top: 61%;
+          }
+
+          div.social {
+            i.icons {
+              top: 10px;
+              padding: 20px 15px;
+              border-radius: 150px;
+              border: 2px solid $blue;
+              font-size: 200%;
+            }
+          }
+        }
+      }
     }
   }
 
   @media all and (max-width: 850px) {
+    div.social {
+      display: none;
+    }
+    
     div.col.s4 {
       width: 100%;
     }
