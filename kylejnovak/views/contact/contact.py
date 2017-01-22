@@ -21,7 +21,8 @@ def contact():
 
             msg = Message(subject_heading + contact_form.subject.data,
                           sender=app.config['MAIL_USERNAME'],
-                          recipients=[app.config['MAIL_USERNAME']])
+                          recipients=[app.config['MAIL_USERNAME']],
+                          reply_to=contact_form.email.data)
 
             msg.body = 'From: {0!s} <{1!s}>\n{2!s}'.format(contact_form.name.data,
                                                            contact_form.email.data,
