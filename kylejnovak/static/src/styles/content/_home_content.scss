@@ -28,25 +28,27 @@ div.home-content {
           margin: 15px 0;
           padding: 0 30px;
 
+          p {
+            margin-bottom: 25px;
+          }
           a:hover {
             text-decoration: underline;
           }
         }
 
-        .social:before {
-          content: "";
-          position: absolute;
-          top: 57.25%;
-          left: 12.5%;
-          width: 75%;
-          border-bottom: 3px dashed $blue;
-        }
-
         div.social {
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 12.5%;
+            width: 75%;
+            border-bottom: 3px dashed $blue;
+          }
           i.icons {
-            color: $blue;
             position: relative;
-            top: 10px;
+            color: $blue;
             background: white;
             padding: 20px 15px;
             border-radius: 150px;
@@ -143,15 +145,20 @@ div.home-content {
     div.welcome {
       div.main-welcome {
         div.main-panel {
-
-          div.social:before {
-            top: 61%;
-          }
-
           div.social {
+            position: relative;
+            &:before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 12.5%;
+              width: 75%;
+              border-bottom: 3px dashed $blue;
+            }
             i.icons {
-              top: 10px;
+              position: relative;
               padding: 20px 15px;
+              background: white;
               border-radius: 150px;
               border: 2px solid $blue;
               font-size: 200%;
@@ -202,7 +209,6 @@ div.home-content {
           margin: 0 0 35px 0;
           width: 100%;
           position: relative;
-          width: 100%;
           display: block;
 
           div.greetings {
