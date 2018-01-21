@@ -9,6 +9,7 @@ The following tools and technologies were used to build this web app:
 - Python
 - Flask
 - SQLAlchemy
+- SQL
 - Postgres
 - Alembic (DB migrations)
 - Materialize
