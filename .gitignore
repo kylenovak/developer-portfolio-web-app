@@ -2,10 +2,3 @@ env/
 .idea/
 __pycache__/
 *.pyc
-node_modules/
-typings/
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml

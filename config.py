@@ -10,19 +10,20 @@ class Config(object):
     CSRF_ENABLED = True
     WTF_CSRF_ENABLED = True
 
+    # FYI: Access has been revoked
     TWITTER_USERNAME = 'KyleJosephNovak'
     TWITTER_CONSUMER_KEY = 'jqbHkP4OTvX1HpBqROwjRr2AX'
     TWITTER_CONSUMER_SECRET = 'jQkfTqnJjs99TCl9WryhbrAHp9d3SQnjJNRC5Ra7Rv5CBjMxCO'
     TWITTER_ACCESS_TOKEN = '792891903016513536-qv5rVowHWx2L5AtQBzdbwckgH5YwJDt'
     TWITTER_ACCESS_SECRET = 'kFrVabKmVd2o4796IwdVlpY0jY3OqPudFrCiTicM8UoC8'
-
+    # FYI: Access has been revoked
     MAIL_SERVER = "smtp.gmail.com"
     MAIL_PORT = 465
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True
     MAIL_USERNAME = 'kyle@novak.codes'
     MAIL_PASSWORD = 'rditewhwplviesof'
-
+    # FYI: Access has been revoked
     GITHUB_USERNAME = 'kylenovak'
     GITHUB_API_TOKEN = 'e26ed3487b1fe28b2722abc8d431bc50a4627ea5'
 

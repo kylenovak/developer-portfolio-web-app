@@ -30,11 +30,7 @@ const config = {
     ],
     resolve: {
         extensions: ['', '.ts', '.tsx', '.js']
-    },
-    externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM'
-    },
+    }
 };
 
 module.exports = config;
