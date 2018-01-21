@@ -15,7 +15,8 @@ The following tools and technologies were used to build this web app:
 - Heroku
 - Linux (Ubuntu)
 - CSS
-- SCSS
+- SCSS/SASS
+- HTML
 - JavaScript
 - JQuery
 - FontAwesome
