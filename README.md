@@ -7,9 +7,9 @@ I hosted the app on Heroku at kylejnovak.com, but i have since shutdown the app 
 What I achieved from this project was that I got to learn a lot of tools that I hadn't used before, as well as launch a full featured app onto the web!
 
 ## Features
-Project features included:
+Project features include:
 
-- Admin console with login/logout capability.
+- Admin console with login/logout capability
 - CMS (Content Management System)
 - Twitter API to pull in my latest tweets
 - Github API to pull in my latest starred repos
