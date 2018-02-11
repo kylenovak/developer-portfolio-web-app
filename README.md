@@ -1,6 +1,10 @@
 # Developer Portfolio Web App
-I built a web app using Python, Flask, JavaScript, jQuery, HTML, CSS, SASS, Postgres, SQL, SQLAlchemy, Heroku, and more. The purpose of this project was to highlight my skills and experience as a developer; it was a developer portfolio site.
+I built a web app using Python, Flask, JavaScript, jQuery, HTML, CSS, SASS, Postgres, SQL, SQLAlchemy, Heroku, and more.
 
+## Purpose
+The purpose of this project was to highlight my skills and experience as a developer; it was a developer portfolio site.
+
+## Live
 I hosted the app on Heroku at kylejnovak.com, but i have since shutdown the app because I wanted to rebuild it with a different tech stack.
 
 ## Achievements
