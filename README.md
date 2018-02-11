@@ -4,7 +4,7 @@ I built a web app using Python, Flask, JavaScript, jQuery, HTML, CSS, SASS, Post
 I hosted the app on Heroku at kylejnovak.com, but i have since shutdown the app because I wanted to rebuild it with a different tech stack.
 
 ## Achievements
-What I achieved from this project was that I got to learn a lot of tools that I hadn't used before, as well as launch a full featured app onto the web!
+What I achieved from this project was that I got to learn a lot of tools that I hadn't used before or wasn't too familiar with (i.e. Flask, SQLAlchemy, Alembic, SASS/SCSS, and Heroku), as well as launch a full featured app onto the web!
 
 ## Features
 Project features include:
