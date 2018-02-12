@@ -13,6 +13,8 @@ What I achieved from this project was that I got to learn a lot of tools that I 
 ## Features
 Project features include:
 
+- Responsive web design
+- CSS Transitions and Animations
 - Admin console with login/logout capability
 - CMS (Content Management System)
 - Twitter API to pull in my latest tweets
